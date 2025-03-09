@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeddyShop - Negozio di Peluche Online</title>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-item">Hai bisogno di aiuto?</div>
+                <div class="top-bar-item">Ottieni Subito Uno Sconto Del 10% Iscrivendoti Alla Newsletter</div>
+                <div class="top-bar-item">Informazioni Di Consegna</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="header">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">
+                    <!-- Logo nell'Image 4 (in alto a sinistra) -->
+                    <img src="logo.png" alt="TeddyShop Logo">
+                    <span class="logo-text">Teddy Shop</span>
+                </div>
+                
+                <button id="mobile-menu-btn" class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="main-nav">
+                    <a href="#">Home</a>
+                    <a href="#">Categorie</a>
+                    <a href="#">Novità</a>
+                    <a href="#">Marchi</a>
+                    <a href="#">Carte regalo</a>
+                    <a href="#">Chi siamo</a>
+                </div>
+                
+                <div class="nav-right">
+                    <a href="#" class="icon-link"><i class="fas fa-user"></i></a>
+                    <a href="#" class="icon-link"><i class="fas fa-search"></i></a>
+                    <a href="#" class="icon-link"><i class="fas fa-heart"></i></a>
+                    <a href="#" class="icon-link"><i class="fas fa-shopping-bag"></i></a>
+                    <button class="btn acquista-btn">Acquista ora</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="promo-badge">*Ecco L'offerta GUND: 40% Di Sconto Dal 20 Aprile Al 5 Maggio!*</div>
+        <!-- Immagine hero dall'Image 4 (banner con i peluche) -->
+        <img src="Untitled.png" alt="Collezione di peluche" class="hero-image">
+    </section>
+    
+    <!-- Main Content -->
+    <div class="container section">
+        <!-- Main Title -->
+        <h1 class="text-center">Esplora E Trova Il Tuo Preferito Su TeddyShop</h1>
+        <p class="text-center mb-4">"Siamo felici di presentare la nostra varietà di nuovi personaggi di peluche! Scopri la collezione, pronti per essere amati, regalati o diventare il tuo nuovo migliore amico"</p>
+        
+        <!-- Collections -->
+        <div class="grid grid-3">
+            <div class="card">
+                <img src="fantasyfriends.png" alt="Fantasy Friends Collection" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Fantasy Friends</h3>
+                    <p class="card-text">Collezione di peluche magici e fantastici. Perfetti per esplorare gli occhi aperti.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="vintagetreasures.png" alt="Vintage Treasures Collection" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Vintage Treasures</h3>
+                    <p class="card-text">Collezione retro, peluche tradizionali e storici, per un tocco di nostalgia.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="wildadventures.png" alt="Wild Adventures Collection" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Wild Adventures</h3>
+                    <p class="card-text">In questa collezione troverai peluche di animali perfetti per tutti tipi di avventure.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Spring Products -->
+        <div class="spring-products">
+            <div class="spring-title-container">
+                <div class="spring-title">
+                    <img src="snowflake.png" alt="Snowflake icon" class="mr-1" style="display: inline-block; vertical-align: middle;">
+                    Acquista Per La Primavera
+                </div>
+            </div>
+            
+            <div class="grid grid-4">
+                <div class="product-card">
+                    <img src="teddyorso.png" alt="Teddy Bear" class="product-image">
+                    <h3 class="product-title">Teddy - 10,5 Orso</h3>
+                    <div class="rating">
+                        <span>★★★★☆</span>
+                    </div>
+                    <p class="product-price">$24</p>
+                </div>
+                
+                <div class="product-card">
+                    <img src="trixy.png" alt="Trixy" class="product-image">
+                    <h3 class="product-title">Trixy - 8,5 Triceratopo</h3>
+                    <div class="rating">
+                        <span>★★★★★</span>
+                    </div>
+                    <p class="product-price">$30</p>
+                </div>
+                
+                <div class="product-card">
+                    <img src="bunnyconiglio.png" alt="Bunny" class="product-image">
+                    <h3 class="product-title">Bunny - 10,5 Coniglio</h3>
+                    <div class="rating">
+                        <span>★★★★☆</span>
+                    </div>
+                    <p class="product-price">$25</p>
+                </div>
+                
+                <div class="product-card">
+                    <img src="giraffa.png" alt="Gigi" class="product-image">
+                    <h3 class="product-title">Gigi - 12,5 Giraffa</h3>
+                    <div class="rating">
+                        <span>★★★★☆</span>
+                    </div>
+                    <p class="product-price">$30</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-3">
+                <a href="#" class="explore-btn">Esplora adesso</a>
+            </div>
+        </div>
+        
+        <!-- Benefits Section -->
+        <div class="benefits-section">
+            <h2 class="text-center mb-4">Ecco Cosa Possiamo Fare Per Te</h2>
+            
+            <div class="grid grid-3">
+                <div class="feature-card">
+                    <img src="shipping.png" alt="Gigi" class="product-image">
+                    <h3 class="benefit-title">Spedizioni sicure</h3>
+                    <p class="benefit-description">Otteniamo consegne rapide per garantire che il tuo peluche arrivi a destinazione in perfette condizioni.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <img src="quality.png" alt="Gigi" class="product-image">
+                    <h3 class="benefit-title">Materiali di qualità</h3>
+                    <p class="benefit-description">Siamo impegnati a utilizzare materiali di qualità per i nostri peluche, per garantire un prodotto che dura nel tempo.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <img src="crown.png" alt="Gigi" class="product-image">
+                    <h3 class="benefit-title">Servizio eccellente</h3>
+                    <p class="benefit-description">La nostra assistenza clienti è tua disposizione per rispondere a tutte le tue domande e risolvere qualsiasi problema.</p>
+                </div>
+            </div>
+            
+            <div class="indicators">
+                <div class="indicator active"></div>
+                <div class="indicator"></div>
+                <div class="indicator"></div>
+                <div class="indicator"></div>
+            </div>
+        </div>
+        
+        <!-- Popular Products Section -->
+        <section class="section">
+            <div class="popular-title">I Peluche Più Ricercati</div>
+            
+            <div class="grid grid-4">
+                <div class="product-card">
+                    <img src="farfalla.png" alt="Aria - Farfalla" class="product-image">
+                    <h3 class="product-title">Aria - 11,5 Farfalla</h3>
+                    <div class="rating">
+                        <span>★★★★★</span>
+                    </div>
+                    <p class="product-price">$35</p>
+                </div>
+                
+                <div class="product-card">
+                    <img src="drago.png" alt="Blaze - Drago" class="product-image">
+                    <h3 class="product-title">Blaze - 13,5 Drago</h3>
+                    <div class="rating">
+                        <span>★★★★☆</span>
+                    </div>
+                    <p class="product-price">$25</p>
+                </div>
+                
+                <div class="product-card">
+                    <img src="lepre.png" alt="Clover - Lepre" class="product-image">
+                    <h3 class="product-title">Clover - 10,5 Lepre</h3>
+                    <div class="rating">
+                        <span>★★★★☆</span>
+                    </div>
+                    <p class="product-price">$30</p>
+                </div>
+                
+                <div class="product-card">
+                    <img src="elefante.png" alt="Jumbo - Elefante" class="product-image">
+                    <h3 class="product-title">Jumbo - 10,5 Elefante</h3>
+                    <div class="rating">
+                        <span>★★★★☆</span>
+                    </div>
+                    <p class="product-price">$25</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-3 mb-5">
+                <a href="#" class="explore-btn">Esplora adesso</a>
+            </div>
+        </section>
+        
+        <!-- Special Features -->
+        <h2 class="text-center mb-4 special-title">
+            <span class="special-heart"><img src="heart-icon.png" alt="Heart icon" class="heart-icon"></span>
+            "Aggiungi Un Tocco Speciale Al Tuo Peluche"
+        </h2>
+        
+        <!-- Special Sections - Redesigned to match Image 2 -->
+        <div class="special-sections-grid">
+            <!-- Gift Card Section (Left side, full height) -->
+            <div class="gift-card-section">
+                <div class="special-card">
+                    <div class="special-image">
+                        <img src="gift-card-image.jpg" alt="Nursery with decorative wall art and bunny toy">
+                    </div>
+                    <div class="special-content">
+                        <h3 class="special-title">Regala un sorriso con la nostra Gift Card</h3>
+                        <p class="special-text">Vuoi fare un regalo ma non sai cosa scegliere? La nostra Gift Card è la soluzione perfetta! Con essa, il destinatario potrà scegliere il peluche che preferisce tra la nostra vasta selezione. Scegli l'importo, personalizza il biglietto d'auguri e rendi felice chi ami!</p>
+                        <a href="#" class="discover-more">Scopri di più</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Weekly Offers Section (Top right) -->
+            <div class="weekly-offers-section">
+                <div class="special-card">
+                    <div class="special-image">
+                        <img src="weekly-offers-image.jpg" alt="Kids room with mountain wall decoration">
+                    </div>
+                    <div class="special-content">
+                        <h3 class="special-title">Le offerte speciali della settimana</h3>
+                        <p class="special-text">Dai un'occhiata alle nostre offerte speciali! Troverai sconti imperdibili su alcuni dei nostri peluche più popolari. Ma affrettati, le offerte sono per tempo limitato!</p>
+                        <a href="#" class="discover-more">Scopri di più</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Custom Teddy Section (Bottom right) -->
+            <div class="custom-teddy-section">
+                <div class="special-card">
+                    <div class="special-image">
+                        <img src="custom-teddy-image.jpg" alt="Kids room with giraffe plush toy">
+                    </div>
+                    <div class="special-content">
+                        <h3 class="special-title">Personalizza il tuo peluche con noi</h3>
+                        <p class="special-text">Vuoi rendere il tuo peluche ancora più speciale? Personalizzalo con il nome o la data! Offriamo un servizio di personalizzazione per molti dei nostri peluche, rendendoli unici e indimenticabili.</p>
+                        <a href="#" class="discover-more">Scopri di più</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Reviews Section -->
+        <section class="section">
+            <div class="reviews-title">
+                <h2>Opinioni Dei Nostri Clienti</h2>
+            </div>
+            
+            <div class="testimonials-carousel">
+                <div class="testimonials-container">
+                    <div class="testimonial-slide">
+                        <div class="grid grid-3">
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <div class="testimonial-avatar">M</div>
+                                    <div>
+                                        <div class="font-medium">Maria Capellari</div>
+                                        <div class="text-xs">Cagliari, mamma</div>
+                                    </div>
+                                </div>
+                                <p class="testimonial-text">"Questo peluche è fantastico! La qualità del materiale è eccezionale e la sua morbidezza lo rende perfetto per abbracciarsi!"</p>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <div class="testimonial-avatar">C</div>
+                                    <div>
+                                        <div class="font-medium">Claudio Rossi</div>
+                                        <div class="text-xs">Opertio, nonno</div>
+                                    </div>
+                                </div>
+                                <p class="testimonial-text">"Non sono soddisfatto di questo peluche. Il materiale sembra economico e la cucitura è piuttosto approssimativa."</p>
+                            </div>
+                            
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <div class="testimonial-avatar">J</div>
+                                    <div>
+                                        <div class="font-medium">Jessica Merla</div>
+                                        <div class="text-xs">Piacenza, nonna</div>
+                                    </div>
+                                </div>
+                                <p class="testimonial-text">"Il peluche stesso è di alta qualità, con dettagli ben curati e una consistenza morbida e soffice. Consiglio vivamente questo negozio!"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="indicators">
+                <div class="indicator active"></div>
+                <div class="indicator"></div>
+                <div class="indicator"></div>
+                <div class="indicator"></div>
+            </div>
+        </section>
+        
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <h3 class="newsletter-title">Iscriviti alla nostra newsletter</h3>
+            <p>Resta aggiornato sulle ultime novità, promozioni e offerte speciali.</p>
+            
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Inserisci la tua email">
+                <button type="submit" class="newsletter-button">Iscriviti adesso</button>
+            </form>
+            
+            <p class="newsletter-privacy">Iscrivendoti accetti la nostra Privacy Policy</p>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="footer-heading">Per aiutarti</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Consegna</a></li>
+                        <li><a href="#">Ritorno</a></li>
+                        <li><a href="#">Domande frequenti</a></li>
+                        <li><a href="#">Pagamento sicuro</a></li>
+                        <li><a href="#">Privacy e sicurezza</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-heading">Chi siamo</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">La nostra storia</a></li>
+                        <li><a href="#">Sicurezza e cialità</a></li>
+                        <li><a href="#">Generale T & C</a></li>
+                        <li><a href="#">Commento rappo</a></li>
+                        <li><a href="#">Mappa del sito</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-heading">Commercio</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Istruzioni ritenti</a></li>
+                        <li><a href="#">Denaro su rivenditore</a></li>
+                        <li><a href="#">Tasse e Conteggi</a></li>
+                        <li><a href="#">Termini e condizioni</a></li>
+                        <li><a href="#">Pubblicità nasionali</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-heading">Supporto</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Stato ordine</a></li>
+                        <li><a href="#">Contattaci</a></li>
+                        <li><a href="#">Spedizione</a></li>
+                        <li><a href="#">Spedizione extra</a></li>
+                        <li><a href="#">Richiamare</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-heading">Social</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">You Tube</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <img src="/api/placeholder/100/50" alt="TeddyShop Logo" class="footer-logo">
+                <p>&copy; 2023 TeddyShop. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Script per funzionalità interattive -->
+    <script src="script.js"></script>
+</body>
+</html>
