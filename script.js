@@ -19,7 +19,42 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize styled section titles
     initializeStyledSectionTitles();
+    
+    // Collection Card Hover Effects
+    setupCollectionCards();
+    
+    // Inicializa o novo Product Showcase
+    setupProductShowcase();
+    
+    // Inicializa a navegação da seção Features
+    initializeFeaturesNavigation();
 });
+
+// Função para inicializar a navegação dos dots da Features Section
+function initializeFeaturesNavigation() {
+    const dots = document.querySelectorAll('.features-section .slider-navigation button');
+    
+    if (dots.length === 0) return;
+    
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            // Remove a classe ativa de todos os dots
+            dots.forEach(d => {
+                d.classList.remove('dot');
+                d.classList.add('dot-inactive');
+                d.setAttribute('aria-selected', 'false');
+            });
+            
+            // Adiciona a classe ativa ao dot clicado
+            dot.classList.remove('dot-inactive');
+            dot.classList.add('dot');
+            dot.setAttribute('aria-selected', 'true');
+            
+            // Aqui você poderia adicionar código para mostrar diferentes conjuntos de features
+            // caso queira implementar um slider real no futuro
+        });
+    });
+}
 
 // Mobile Menu Toggle
 function setupMobileMenu() {
@@ -58,44 +93,40 @@ function initializeStarRatings() {
 // Testimonial Carousel
 function initializeTestimonialCarousel() {
     const testimonialContainer = document.querySelector('.testimonials-container');
-    const indicators = document.querySelectorAll('.indicators .indicator');
+    const indicators = document.querySelectorAll('.reviews-section .indicators .indicator');
+    
+    // Check if elements exist
+    if (!testimonialContainer || indicators.length === 0) return;
+    
+    // Initialize variables
     let currentSlide = 0;
     
+    // Function to show a specific slide (but actually keep content visible)
     function showSlide(index) {
-        if (!testimonialContainer) return;
+        // Always keep the container at the original position to show testimonials
+        testimonialContainer.style.transform = 'translateX(0)';
         
-        // Update the container position
-        testimonialContainer.style.transform = `translateX(-${index * 100}%)`;
+        // Update indicators to show interactivity
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === index);
+        });
         
-        // Update indicators
-        if (indicators.length > 0) {
-            indicators.forEach((indicator, i) => {
-                indicator.classList.toggle('active', i === index);
-            });
-        }
-        
+        // Update current slide index
         currentSlide = index;
     }
     
     // Set up indicator click events
-    if (indicators.length > 0) {
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                showSlide(index);
-            });
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            showSlide(index);
         });
-    }
+    });
     
-    // Auto slide change
-    setInterval(() => {
-        if (!testimonialContainer) return;
-        
-        let nextSlide = (currentSlide + 1) % (indicators.length || 4);
-        showSlide(nextSlide);
-    }, 5000);
+    // Initialize with first slide
+    showSlide(0);
 }
 
-// Newsletter Form
+// Newsletter Form 
 function setupNewsletterForm() {
     const newsletterForm = document.querySelector('.newsletter-form');
     
@@ -118,9 +149,30 @@ function setupNewsletterForm() {
     }
 }
 
+// Collection Card Hover Effects
+function setupCollectionCards() {
+    const collectionCards = document.querySelectorAll('.card-content');
+    
+    collectionCards.forEach(card => {
+        // Adicionando transição suave
+        card.style.transition = 'transform 0.3s, box-shadow 0.3s';
+        
+        // Evento de hover
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-5px)';
+            card.style.boxShadow = '0 8px 15px rgba(0, 0, 0, 0.08)';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+            card.style.boxShadow = '0px 4px 4px rgba(0, 0, 0, 0.25)';
+        });
+    });
+}
+
 // Product Card Hover Effects
 function setupProductCardHover() {
-    const productCards = document.querySelectorAll('.product-card');
+    const productCards = document.querySelectorAll('.products-grid .product-card');
     
     productCards.forEach(card => {
         card.addEventListener('mouseenter', () => {
@@ -137,7 +189,7 @@ function setupProductCardHover() {
 
 // Apply consistent product styling
 function applyConsistentProductStyling() {
-    const productCards = document.querySelectorAll('.product-card');
+    const productCards = document.querySelectorAll('.products-grid .product-card');
     
     productCards.forEach(card => {
         // Remove any inline styles that might be affecting the background
@@ -220,4 +272,60 @@ function showMessage(message, type) {
     setTimeout(() => {
         messageElement.remove();
     }, 3000);
+}
+
+// Nova função para configurar o Product Showcase
+function setupProductShowcase() {
+    // Configurar o botão de explorar
+    const exploreButton = document.querySelector('.explore-button');
+    if (exploreButton) {
+        exploreButton.addEventListener('click', function() {
+            // Poderia redirecionar para uma página de produtos ou catálogo
+            // window.location.href = 'products.html';
+            
+            // Por enquanto, apenas adiciona um efeito ao clicar
+            this.classList.add('clicked');
+            setTimeout(() => {
+                this.classList.remove('clicked');
+            }, 200);
+        });
+    }
+    
+    // Configurar efeitos de hover para os cards do product showcase
+    const productCards = document.querySelectorAll('.product-showcase .product-card');
+    productCards.forEach(card => {
+        const imageWrapper = card.querySelector('.product-image-wrapper');
+        if (imageWrapper) {
+            imageWrapper.addEventListener('mouseenter', () => {
+                imageWrapper.style.transform = 'translateY(-5px)';
+                imageWrapper.style.boxShadow = '0px 8px 8px rgba(0, 0, 0, 0.25)';
+            });
+            
+            imageWrapper.addEventListener('mouseleave', () => {
+                imageWrapper.style.transform = '';
+                imageWrapper.style.boxShadow = '0px 4px 4px rgba(0, 0, 0, 0.25)';
+            });
+        }
+    });
+    
+    // Verificar e criar as imagens de estrelas se necessário
+    const starIcons = document.querySelectorAll('.star-icon');
+    if (starIcons.length > 0) {
+        // Se as imagens das estrelas não carregarem corretamente, substitua com HTML
+        starIcons.forEach(star => {
+            star.addEventListener('error', function() {
+                const type = this.alt.includes('Filled') ? 'filled' : 
+                             this.alt.includes('Half') ? 'half' : 'empty';
+                
+                const starSymbol = type === 'filled' ? '★' : 
+                                  type === 'half' ? '★' : '☆';
+                
+                const span = document.createElement('span');
+                span.className = 'star ' + (type !== 'filled' ? 'star-' + type : '');
+                span.textContent = starSymbol;
+                
+                this.parentNode.replaceChild(span, this);
+            });
+        });
+    }
 }
