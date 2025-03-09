@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(() => {
         if (!testimonialContainer) return;
         
-        let nextSlide = (currentSlide + 1) % (indicators.length || 3);
+        let nextSlide = (currentSlide + 1) % (indicators.length || 4);
         showSlide(nextSlide);
     }, 5000);
     
@@ -79,6 +79,18 @@ document.addEventListener('DOMContentLoaded', function() {
         const messageElement = document.createElement('div');
         messageElement.className = `message ${type}`;
         messageElement.textContent = message;
+        messageElement.style.padding = '10px';
+        messageElement.style.margin = '10px 0';
+        messageElement.style.borderRadius = '5px';
+        messageElement.style.textAlign = 'center';
+        
+        if (type === 'success') {
+            messageElement.style.backgroundColor = '#d7e9e9';
+            messageElement.style.color = '#362417';
+        } else {
+            messageElement.style.backgroundColor = '#f9e7dd';
+            messageElement.style.color = '#362417';
+        }
         
         const form = document.querySelector('.newsletter-form');
         form.parentNode.insertBefore(messageElement, form.nextSibling);

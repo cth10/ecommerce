@@ -28,7 +28,6 @@
         <div class="container">
             <div class="nav-container">
                 <div class="logo">
-                    <!-- Logo nell'Image 4 (in alto a sinistra) -->
                     <img src="logo.png" alt="TeddyShop Logo">
                     <span class="logo-text">Teddy Shop</span>
                 </div>
@@ -60,12 +59,11 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="promo-badge">*Ecco L'offerta GUND: 40% Di Sconto Dal 20 Aprile Al 5 Maggio!*</div>
-        <!-- Immagine hero dall'Image 4 (banner con i peluche) -->
         <img src="Untitled.png" alt="Collezione di peluche" class="hero-image">
     </section>
     
     <!-- Main Content -->
-    <div class="container section">
+    <div class="container section" style="max-width: 1800px;">
         <!-- Main Title -->
         <h1 class="text-center">Esplora E Trova Il Tuo Preferito Su TeddyShop</h1>
         <p class="text-center mb-4">"Siamo felici di presentare la nostra varietà di nuovi personaggi di peluche! Scopri la collezione, pronti per essere amati, regalati o diventare il tuo nuovo migliore amico"</p>
@@ -101,7 +99,7 @@
         <div class="spring-products">
             <div class="spring-title-container">
                 <div class="spring-title">
-                    <img src="snowflake.png" alt="Snowflake icon" class="mr-1" style="display: inline-block; vertical-align: middle;">
+                    <img src="flower-icon.png" alt="Flower icon" class="mr-1" style="display: inline-block; vertical-align: middle; width: 20px; height: 20px;">
                     Acquista Per La Primavera
                 </div>
             </div>
@@ -151,33 +149,35 @@
         
         <!-- Benefits Section -->
         <div class="benefits-section">
-            <h2 class="text-center mb-4">Ecco Cosa Possiamo Fare Per Te</h2>
-            
-            <div class="grid grid-3">
-                <div class="feature-card">
-                    <img src="shipping.png" alt="Gigi" class="product-image">
-                    <h3 class="benefit-title">Spedizioni sicure</h3>
-                    <p class="benefit-description">Otteniamo consegne rapide per garantire che il tuo peluche arrivi a destinazione in perfette condizioni.</p>
+            <div class="container">
+                <h2 class="text-center mb-4" style="font-size: 28px; margin-bottom: 2rem !important;">Ecco Cosa Possiamo Fare Per Te</h2>
+                
+                <div class="grid grid-3">
+                    <div class="feature-card">
+                        <img src="shipping.png" alt="Spedizioni sicure" class="feature-icon">
+                        <h3 class="benefit-title">Spedizioni sicure</h3>
+                        <p class="benefit-description">Otteniamo consegne rapide per garantire che il tuo peluche arrivi a destinazione in perfette condizioni.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <img src="quality.png" alt="Materiali di qualità" class="feature-icon">
+                        <h3 class="benefit-title">Materiali di qualità</h3>
+                        <p class="benefit-description">Siamo impegnati a utilizzare materiali di qualità per i nostri peluche, per garantire un prodotto che dura nel tempo.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <img src="crown.png" alt="Servizio eccellente" class="feature-icon">
+                        <h3 class="benefit-title">Servizio eccellente</h3>
+                        <p class="benefit-description">La nostra assistenza clienti è tua disposizione per rispondere a tutte le tue domande e risolvere qualsiasi problema.</p>
+                    </div>
                 </div>
                 
-                <div class="feature-card">
-                    <img src="quality.png" alt="Gigi" class="product-image">
-                    <h3 class="benefit-title">Materiali di qualità</h3>
-                    <p class="benefit-description">Siamo impegnati a utilizzare materiali di qualità per i nostri peluche, per garantire un prodotto che dura nel tempo.</p>
+                <div class="indicators">
+                    <div class="indicator active"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
                 </div>
-                
-                <div class="feature-card">
-                    <img src="crown.png" alt="Gigi" class="product-image">
-                    <h3 class="benefit-title">Servizio eccellente</h3>
-                    <p class="benefit-description">La nostra assistenza clienti è tua disposizione per rispondere a tutte le tue domande e risolvere qualsiasi problema.</p>
-                </div>
-            </div>
-            
-            <div class="indicators">
-                <div class="indicator active"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
             </div>
         </div>
         
@@ -229,52 +229,48 @@
         </section>
         
         <!-- Special Features -->
-        <h2 class="text-center mb-4 special-title">
-            <span class="special-heart"><img src="heart-icon.png" alt="Heart icon" class="heart-icon"></span>
-            "Aggiungi Un Tocco Speciale Al Tuo Peluche"
-        </h2>
+        <div class="special-title-section">
+            <h2>
+                <img src="heart-icon.png" alt="Heart icon" class="heart-icon">
+                "Aggiungi Un Tocco Speciale Al Tuo Peluche"
+            </h2>
+        </div>
         
-        <!-- Special Sections - Redesigned to match Image 2 -->
+        <!-- Special Sections - Redesigned to match Images 1 and 2 -->
         <div class="special-sections-grid">
             <!-- Gift Card Section (Left side, full height) -->
             <div class="gift-card-section">
-                <div class="special-card">
-                    <div class="special-image">
-                        <img src="gift-card-image.jpg" alt="Nursery with decorative wall art and bunny toy">
-                    </div>
-                    <div class="special-content">
-                        <h3 class="special-title">Regala un sorriso con la nostra Gift Card</h3>
-                        <p class="special-text">Vuoi fare un regalo ma non sai cosa scegliere? La nostra Gift Card è la soluzione perfetta! Con essa, il destinatario potrà scegliere il peluche che preferisce tra la nostra vasta selezione. Scegli l'importo, personalizza il biglietto d'auguri e rendi felice chi ami!</p>
-                        <a href="#" class="discover-more">Scopri di più</a>
-                    </div>
+                <div class="special-image">
+                    <img src="gift-card-image.jpg" alt="Nursery with decorative wall art and bunny toy">
+                </div>
+                <div class="special-content">
+                    <h3 class="special-title">Regala un sorriso con la nostra Gift Card</h3>
+                    <p class="special-text">Vuoi fare un regalo ma non sai cosa scegliere? La nostra Gift Card è la soluzione perfetta! Con essa, il destinatario potrà scegliere il peluche che preferisce tra la nostra vasta selezione. Scegli l'importo, personalizza il biglietto d'auguri e rendi felice chi ami!</p>
+                    <a href="#" class="discover-more">Scopri di più</a>
                 </div>
             </div>
             
             <!-- Weekly Offers Section (Top right) -->
             <div class="weekly-offers-section">
-                <div class="special-card">
-                    <div class="special-image">
-                        <img src="weekly-offers-image.jpg" alt="Kids room with mountain wall decoration">
-                    </div>
-                    <div class="special-content">
-                        <h3 class="special-title">Le offerte speciali della settimana</h3>
-                        <p class="special-text">Dai un'occhiata alle nostre offerte speciali! Troverai sconti imperdibili su alcuni dei nostri peluche più popolari. Ma affrettati, le offerte sono per tempo limitato!</p>
-                        <a href="#" class="discover-more">Scopri di più</a>
-                    </div>
+                <div class="special-image">
+                    <img src="weekly-offers-image.jpg" alt="Kids room with mountain wall decoration">
+                </div>
+                <div class="special-content">
+                    <h3 class="special-title">Le offerte speciali della settimana</h3>
+                    <p class="special-text">Dai un'occhiata alle nostre offerte speciali! Troverai sconti imperdibili su alcuni dei nostri peluche più popolari. Ma affrettati, le offerte sono per tempo limitato!</p>
+                    <a href="#" class="discover-more">Scopri di più</a>
                 </div>
             </div>
             
             <!-- Custom Teddy Section (Bottom right) -->
             <div class="custom-teddy-section">
-                <div class="special-card">
-                    <div class="special-image">
-                        <img src="custom-teddy-image.jpg" alt="Kids room with giraffe plush toy">
-                    </div>
-                    <div class="special-content">
-                        <h3 class="special-title">Personalizza il tuo peluche con noi</h3>
-                        <p class="special-text">Vuoi rendere il tuo peluche ancora più speciale? Personalizzalo con il nome o la data! Offriamo un servizio di personalizzazione per molti dei nostri peluche, rendendoli unici e indimenticabili.</p>
-                        <a href="#" class="discover-more">Scopri di più</a>
-                    </div>
+                <div class="special-image">
+                    <img src="custom-teddy-image.jpg" alt="Kids room with giraffe plush toy">
+                </div>
+                <div class="special-content">
+                    <h3 class="special-title">Personalizza il tuo peluche con noi</h3>
+                    <p class="special-text">Vuoi rendere il tuo peluche ancora più speciale? Personalizzalo con il nome o la data! Offriamo un servizio di personalizzazione per molti dei nostri peluche, rendendoli unici e indimenticabili.</p>
+                    <a href="#" class="discover-more">Scopri di più</a>
                 </div>
             </div>
         </div>
@@ -409,7 +405,7 @@
             </div>
             
             <div class="footer-bottom">
-                <img src="/api/placeholder/100/50" alt="TeddyShop Logo" class="footer-logo">
+                <img src="logo.png" alt="TeddyShop Logo" class="footer-logo">
                 <p>&copy; 2023 TeddyShop. Tutti i diritti riservati.</p>
             </div>
         </div>
