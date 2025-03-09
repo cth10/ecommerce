@@ -63,86 +63,79 @@
     </section>
     
     <!-- Main Content -->
-    <div class="container section" style="max-width: 1800px;">
+    <div class="container main-content">
         <!-- Main Title -->
         <h1 class="text-center">Esplora E Trova Il Tuo Preferito Su TeddyShop</h1>
-        <p class="text-center mb-4">"Siamo felici di presentare la nostra varietà di nuovi personaggi di peluche! Scopri la collezione, pronti per essere amati, regalati o diventare il tuo nuovo migliore amico"</p>
+        <p class="text-center subtitle">"Siamo felici di presentare la nostra varietà di nuovi personaggi di peluche! Scopri la collezione, pronti per essere amati, regalati o diventare il tuo nuovo migliore amico"</p>
         
         <!-- Collections -->
-        <div class="grid grid-3">
-            <div class="card">
-                <img src="fantasyfriends.png" alt="Fantasy Friends Collection" class="card-image">
-                <div class="card-content">
-                    <h3 class="card-title">Fantasy Friends</h3>
-                    <p class="card-text">Collezione di peluche magici e fantastici. Perfetti per esplorare gli occhi aperti.</p>
+        <div class="collections-grid">
+            <div class="collection-card">
+                <img src="fantasyfriends.png" alt="Fantasy Friends Collection" class="collection-image">
+                <div class="collection-content">
+                    <h3 class="collection-title">Fantasy Friends</h3>
+                    <p class="collection-text">Collezione di peluche magici e fantastici. Perfetti per esplorare gli occhi aperti.</p>
                 </div>
             </div>
             
-            <div class="card">
-                <img src="vintagetreasures.png" alt="Vintage Treasures Collection" class="card-image">
-                <div class="card-content">
-                    <h3 class="card-title">Vintage Treasures</h3>
-                    <p class="card-text">Collezione retro, peluche tradizionali e storici, per un tocco di nostalgia.</p>
+            <div class="collection-card">
+                <img src="vintagetreasures.png" alt="Vintage Treasures Collection" class="collection-image">
+                <div class="collection-content">
+                    <h3 class="collection-title">Vintage Treasures</h3>
+                    <p class="collection-text">Collezione retro, peluche tradizionali e storici, per un tocco di nostalgia.</p>
                 </div>
             </div>
             
-            <div class="card">
-                <img src="wildadventures.png" alt="Wild Adventures Collection" class="card-image">
-                <div class="card-content">
-                    <h3 class="card-title">Wild Adventures</h3>
-                    <p class="card-text">In questa collezione troverai peluche di animali perfetti per tutti tipi di avventure.</p>
+            <div class="collection-card">
+                <img src="wildadventures.png" alt="Wild Adventures Collection" class="collection-image">
+                <div class="collection-content">
+                    <h3 class="collection-title">Wild Adventures</h3>
+                    <p class="collection-text">In questa collezione troverai peluche di animali perfetti per tutti tipi di avventure.</p>
                 </div>
             </div>
         </div>
         
-        <!-- Spring Products -->
-        <div class="spring-products">
-            <div class="spring-title-container">
-                <div class="spring-title">
-                    <img src="flower-icon.png" alt="Flower icon" class="mr-1" style="display: inline-block; vertical-align: middle; width: 20px; height: 20px;">
-                    Acquista Per La Primavera
-                </div>
+        <!-- Spring Title Button -->
+        <div class="spring-title-container">
+            <div class="spring-title">
+                <img src="flower-icon.png" alt="Flower icon">
+                <span>Acquista Per La Primavera</span>
             </div>
-            
-            <div class="grid grid-4">
+        </div>
+        
+        <!-- Spring Products -->
+        <div class="spring-products-section">
+            <div class="products-grid">
                 <div class="product-card">
                     <img src="teddyorso.png" alt="Teddy Bear" class="product-image">
                     <h3 class="product-title">Teddy - 10,5 Orso</h3>
-                    <div class="rating">
-                        <span>★★★★☆</span>
-                    </div>
+                    <div class="rating" data-rating="4"></div>
                     <p class="product-price">$24</p>
                 </div>
                 
                 <div class="product-card">
                     <img src="trixy.png" alt="Trixy" class="product-image">
                     <h3 class="product-title">Trixy - 8,5 Triceratopo</h3>
-                    <div class="rating">
-                        <span>★★★★★</span>
-                    </div>
+                    <div class="rating" data-rating="5"></div>
                     <p class="product-price">$30</p>
                 </div>
                 
                 <div class="product-card">
                     <img src="bunnyconiglio.png" alt="Bunny" class="product-image">
                     <h3 class="product-title">Bunny - 10,5 Coniglio</h3>
-                    <div class="rating">
-                        <span>★★★★☆</span>
-                    </div>
+                    <div class="rating" data-rating="4"></div>
                     <p class="product-price">$25</p>
                 </div>
                 
                 <div class="product-card">
                     <img src="giraffa.png" alt="Gigi" class="product-image">
                     <h3 class="product-title">Gigi - 12,5 Giraffa</h3>
-                    <div class="rating">
-                        <span>★★★★☆</span>
-                    </div>
+                    <div class="rating" data-rating="4"></div>
                     <p class="product-price">$30</p>
                 </div>
             </div>
             
-            <div class="text-center mt-3">
+            <div class="text-center">
                 <a href="#" class="explore-btn">Esplora adesso</a>
             </div>
         </div>
@@ -150,9 +143,9 @@
         <!-- Benefits Section -->
         <div class="benefits-section">
             <div class="container">
-                <h2 class="text-center mb-4" style="font-size: 28px; margin-bottom: 2rem !important;">Ecco Cosa Possiamo Fare Per Te</h2>
+                <h2 class="section-title">Ecco Cosa Possiamo Fare Per Te</h2>
                 
-                <div class="grid grid-3">
+                <div class="benefits-grid">
                     <div class="feature-card">
                         <img src="shipping.png" alt="Spedizioni sicure" class="feature-icon">
                         <h3 class="benefit-title">Spedizioni sicure</h3>
@@ -182,61 +175,58 @@
         </div>
         
         <!-- Popular Products Section -->
-        <section class="section">
-            <div class="popular-title">I Peluche Più Ricercati</div>
+        <section class="popular-products-section">
+            <div class="section-title-container">
+                <div class="section-title-wrapper">
+                    <img src="teddy-icon.png" alt="Teddy icon">
+                    <span>I Peluche Più Ricercati</span>
+                </div>
+            </div>
             
-            <div class="grid grid-4">
+            <div class="products-grid">
                 <div class="product-card">
                     <img src="farfalla.png" alt="Aria - Farfalla" class="product-image">
                     <h3 class="product-title">Aria - 11,5 Farfalla</h3>
-                    <div class="rating">
-                        <span>★★★★★</span>
-                    </div>
+                    <div class="rating" data-rating="5"></div>
                     <p class="product-price">$35</p>
                 </div>
                 
                 <div class="product-card">
                     <img src="drago.png" alt="Blaze - Drago" class="product-image">
                     <h3 class="product-title">Blaze - 13,5 Drago</h3>
-                    <div class="rating">
-                        <span>★★★★☆</span>
-                    </div>
+                    <div class="rating" data-rating="4"></div>
                     <p class="product-price">$25</p>
                 </div>
                 
                 <div class="product-card">
                     <img src="lepre.png" alt="Clover - Lepre" class="product-image">
                     <h3 class="product-title">Clover - 10,5 Lepre</h3>
-                    <div class="rating">
-                        <span>★★★★☆</span>
-                    </div>
+                    <div class="rating" data-rating="4"></div>
                     <p class="product-price">$30</p>
                 </div>
                 
                 <div class="product-card">
                     <img src="elefante.png" alt="Jumbo - Elefante" class="product-image">
                     <h3 class="product-title">Jumbo - 10,5 Elefante</h3>
-                    <div class="rating">
-                        <span>★★★★☆</span>
-                    </div>
+                    <div class="rating" data-rating="4"></div>
                     <p class="product-price">$25</p>
                 </div>
             </div>
             
-            <div class="text-center mt-3 mb-5">
+            <div class="text-center">
                 <a href="#" class="explore-btn">Esplora adesso</a>
             </div>
         </section>
         
         <!-- Special Features -->
         <div class="special-title-section">
-            <h2>
-                <img src="heart-icon.png" alt="Heart icon" class="heart-icon">
-                "Aggiungi Un Tocco Speciale Al Tuo Peluche"
-            </h2>
+            <div class="heart-icon-title-container">
+                <img src="heart-icon.png" alt="Heart icon">
+                <h2>"Aggiungi Un Tocco Speciale Al Tuo Peluche"</h2>
+            </div>
         </div>
         
-        <!-- Special Sections - Redesigned to match Images 1 and 2 -->
+        <!-- Special Sections Grid -->
         <div class="special-sections-grid">
             <!-- Gift Card Section (Left side, full height) -->
             <div class="gift-card-section">
@@ -276,21 +266,24 @@
         </div>
         
         <!-- Reviews Section -->
-        <section class="section">
-            <div class="reviews-title">
-                <h2>Opinioni Dei Nostri Clienti</h2>
+        <section class="reviews-section">
+            <div class="section-title-container">
+                <div class="section-title-wrapper">
+                    <img src="heart-icon.png" alt="Heart icon">
+                    <span>Opinioni Dei Nostri Clienti</span>
+                </div>
             </div>
             
             <div class="testimonials-carousel">
                 <div class="testimonials-container">
                     <div class="testimonial-slide">
-                        <div class="grid grid-3">
+                        <div class="testimonials-grid">
                             <div class="testimonial-card">
                                 <div class="testimonial-header">
-                                    <div class="testimonial-avatar">M</div>
+                                    <div class="testimonial-avatar avatar-m">M</div>
                                     <div>
-                                        <div class="font-medium">Maria Capellari</div>
-                                        <div class="text-xs">Cagliari, mamma</div>
+                                        <div class="testimonial-name">Maria Cipolari</div>
+                                        <div class="testimonial-info">Cagliari, mamma</div>
                                     </div>
                                 </div>
                                 <p class="testimonial-text">"Questo peluche è fantastico! La qualità del materiale è eccezionale e la sua morbidezza lo rende perfetto per abbracciarsi!"</p>
@@ -298,10 +291,10 @@
                             
                             <div class="testimonial-card">
                                 <div class="testimonial-header">
-                                    <div class="testimonial-avatar">C</div>
+                                    <div class="testimonial-avatar avatar-c">C</div>
                                     <div>
-                                        <div class="font-medium">Claudio Rossi</div>
-                                        <div class="text-xs">Opertio, nonno</div>
+                                        <div class="testimonial-name">Claudio Boldi</div>
+                                        <div class="testimonial-info">Operaio, genitore</div>
                                     </div>
                                 </div>
                                 <p class="testimonial-text">"Non sono soddisfatto di questo peluche. Il materiale sembra economico e la cucitura è piuttosto approssimativa."</p>
@@ -309,10 +302,10 @@
                             
                             <div class="testimonial-card">
                                 <div class="testimonial-header">
-                                    <div class="testimonial-avatar">J</div>
+                                    <div class="testimonial-avatar avatar-j">J</div>
                                     <div>
-                                        <div class="font-medium">Jessica Merla</div>
-                                        <div class="text-xs">Piacenza, nonna</div>
+                                        <div class="testimonial-name">Jessica Merla</div>
+                                        <div class="testimonial-info">Piacenza, nonna</div>
                                     </div>
                                 </div>
                                 <p class="testimonial-text">"Il peluche stesso è di alta qualità, con dettagli ben curati e una consistenza morbida e soffice. Consiglio vivamente questo negozio!"</p>
