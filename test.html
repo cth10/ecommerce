@@ -1,56 +1,77 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Flor Delicada</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flor Teste</title>
     <style>
-        .flower-container {
+        body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
+            margin: 0;
+            background-color: #e0efe0;
         }
-        .flower {
+
+        .flor-container {
             position: relative;
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
         }
-        .petal {
+
+        .centro {
             position: absolute;
-            width: 100px;
-            height: 150px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            transform-origin: bottom center;
-        }
-        .center {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            background-color: #FFD700;
+            width: 40px;
+            height: 40px;
+            background-color: white;
             border-radius: 50%;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index: 10;
+            z-index: 2;
         }
+
+        .petala {
+            position: absolute;
+            width: 32px;
+            height: 85px;
+            background-color: #fad3c4;
+            border-radius: 50% 50% 50% 50%;
+            top: 50%;
+            left: 50%;
+            transform-origin: center bottom;
+            z-index: 1;
+        }
+
+        .petala:nth-child(1) { transform: translate(-50%, -100%) rotate(0deg); }
+        .petala:nth-child(2) { transform: translate(-50%, -100%) rotate(36deg); }
+        .petala:nth-child(3) { transform: translate(-50%, -100%) rotate(72deg); }
+        .petala:nth-child(4) { transform: translate(-50%, -100%) rotate(108deg); }
+        .petala:nth-child(5) { transform: translate(-50%, -100%) rotate(144deg); }
+        .petala:nth-child(6) { transform: translate(-50%, -100%) rotate(180deg); }
+        .petala:nth-child(7) { transform: translate(-50%, -100%) rotate(216deg); }
+        .petala:nth-child(8) { transform: translate(-50%, -100%) rotate(252deg); }
+        .petala:nth-child(9) { transform: translate(-50%, -100%) rotate(288deg); }
+        .petala:nth-child(10) { transform: translate(-50%, -100%) rotate(324deg); }
+
     </style>
 </head>
 <body>
-    <div class="flower-container">
-        <div class="flower">
-            <div class="center"></div>
-            <div class="petal" style="background-image: url('Vector.png'); top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(0deg);"></div>
-            <div class="petal" style="background-image: url('Vector2.png'); top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(45deg);"></div>
-            <div class="petal" style="background-image: url('Vector3.png'); top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(90deg);"></div>
-            <div class="petal" style="background-image: url('Vector4.png'); top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(135deg);"></div>
-            <div class="petal" style="background-image: url('/api/placeholder/100/150'); top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(180deg);"></div>
-            <div class="petal" style="background-image: url('/api/placeholder/100/150'); top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(225deg);"></div>
-            <div class="petal" style="background-image: url('/api/placeholder/100/150'); top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(270deg);"></div>
-            <div class="petal" style="background-image: url('/api/placeholder/100/150'); top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(315deg);"></div>
-            <div class="petal" style="background-image: url('/api/placeholder/100/150'); top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(360deg);"></div>
-        </div>
+    <div class="flor-container">
+        <!-- Pétalas -->
+        <div class="petala"></div>
+        <div class="petala"></div>
+        <div class="petala"></div>
+        <div class="petala"></div>
+        <div class="petala"></div>
+        <div class="petala"></div>
+        <div class="petala"></div>
+        <div class="petala"></div>
+        <div class="petala"></div>
+        <div class="petala"></div>
+        
+        <div class="centro"></div>
     </div>
 </body>
 </html>
