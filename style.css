@@ -256,7 +256,9 @@ p {
 .explore-btn {
     background-color: var(--beige);
     color: var(--white);
-    padding: 0.8rem 2.5rem;
+    padding: 0.1
+    
+    rem 2.5rem;
     margin: 2rem 0;
 }
 
@@ -432,21 +434,28 @@ p {
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 80%;
-    max-width: 800px;
-    height: 75px;
+    max-width: 550px;
+    height: 65px;
     border: 2px solid var(--yellow-gold);
     border-radius: var(--radius-xl);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-    padding: 0 40px 0 25px;
+    padding: 0;
     background-color: var(--white);
 }
 
+.spring-banner__container > * {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
 .spring-banner__icon {
-    width: 48px;
-    height: 48px;
+    width: 85px;
+    height: 85px;
     object-fit: contain;
-    margin-right: var(--spacing-lg);
+    margin-right: 0;
     flex-shrink: 0;
 }
 
@@ -457,8 +466,8 @@ p {
     font-weight: 500;
     color: var(--dark-brown);
     text-align: center;
-    width: 100%;
     margin: 0;
+    padding-left: 0;
 }
 
 /* Product Showcase */
@@ -607,7 +616,7 @@ p {
     background-color: var(--white);
     border: 2px solid var(--gold);
     border-radius: var(--radius-xl);
-    padding: 0.8rem 2.5rem;
+    padding: 0.1rem 2.5rem;
     font-size: var(--font-lg);
     font-weight: 600;
     color: var(--brown);
@@ -647,8 +656,8 @@ p {
 }
 
 .section-title-wrapper img {
-    width: 28px;
-    height: 28px;
+    width: 50px;
+    height: 50px;
     margin-right: 10px;
 }
 
@@ -1247,17 +1256,17 @@ p {
 /* Flower for feature section title */
 .flor-decorativa {
     position: relative;
-    width: 24px; 
-    height: 24px;
+    width: 40px; 
+    height: 40px;
     flex-shrink: 0;
     display: inline-block;
-    margin: 0 8px;
+    margin: 0 14px;
 }
 
 .flor-decorativa .centro {
     position: absolute;
-    width: 10px; 
-    height: 10px; 
+    width: 16px; 
+    height: 16px; 
     background-color: var(--white);
     border-radius: 50%;
     top: 50%;
@@ -1268,8 +1277,8 @@ p {
   
 .flor-decorativa .petala {
     position: absolute;
-    width: 7px; 
-    height: 12px;
+    width: 12px; 
+    height: 20px;
     background-color: var(--light-peach);
     border-radius: 50% 50% 50% 50%;
     top: 50%;
