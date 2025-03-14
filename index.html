@@ -1,634 +1,501 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TeddyShop - Negozio di Peluche Online</title>
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TeddyShop - Negozio di Peluche Online</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="top-bar-content">
-                <div class="top-bar-item">Hai bisogno di aiuto?</div>
-                <div class="top-bar-item">Ottieni Subito Uno Sconto Del 10% Iscrivendoti Alla Newsletter</div>
-                <div class="top-bar-item">Informazioni Di Consegna</div>
-            </div>
-        </div>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-content">
+        <div class="top-bar-item">Hai bisogno di aiuto?</div>
+        <div class="top-bar-item">Ottieni Subito Uno Sconto Del 10% Iscrivendoti Alla Newsletter</div>
+        <div class="top-bar-item">Informazioni Di Consegna</div>
+      </div>
     </div>
-    
-    <!-- Navigation -->
-    <nav class="header">
-        <div class="container">
-            <div class="nav-container">
-                <div class="logo">
-                    <img src="images/logo.png" alt="TeddyShop Logo">
-                    <span class="logo-text">Teddy Shop</span>
-                </div>
-                
-                <button id="mobile-menu-btn" class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-                
-                <div class="main-nav">
-                    <a href="#">Home</a>
-                    <a href="#">Categorie</a>
-                    <a href="#">Novità</a>
-                    <a href="#">Marchi</a>
-                    <a href="#">Carte regalo</a>
-                    <a href="#">Chi siamo</a>
-                </div>
-                
-                <div class="nav-right">
-                    <a href="#" class="icon-link"><i class="fas fa-user"></i></a>
-                    <a href="#" class="icon-link"><i class="fas fa-search"></i></a>
-                    <a href="#" class="icon-link"><i class="fas fa-heart"></i></a>
-                    <a href="#" class="icon-link"><i class="fas fa-shopping-bag"></i></a>
-                    <button class="btn acquista-btn">Acquista ora</button>
-                </div>
-            </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="header">
+    <div class="container">
+      <div class="nav-container">
+        <div class="logo">
+          <img src="images/logo.png" alt="TeddyShop Logo">
+          <span class="logo-text">Teddy Shop</span>
         </div>
-    </nav>
-    
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="promo-badge">*Ecco L'offerta GUND: 40% Di Sconto Dal 20 Aprile Al 5 Maggio!*</div>
-        <img src="images/Untitled.png" alt="Collezione di peluche" class="hero-image">
+
+        <button id="mobile-menu-btn" class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="main-nav">
+          <a href="#">Home</a>
+          <a href="#">Categorie</a>
+          <a href="#">Novità</a>
+          <a href="#">Marchi</a>
+          <a href="#">Carte regalo</a>
+          <a href="#">Chi siamo</a>
+        </div>
+
+        <div class="nav-right">
+          <a href="#" class="icon-link"><i class="fas fa-user"></i></a>
+          <a href="#" class="icon-link"><i class="fas fa-search"></i></a>
+          <a href="#" class="icon-link"><i class="fas fa-heart"></i></a>
+          <a href="#" class="icon-link"><i class="fas fa-shopping-bag"></i></a>
+          <button class="btn acquista-btn">Acquista ora</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+
+
+    <!-- Imagem de fundo com o banner sobreposto -->
+    <div class="hero-banner-container">
+      <img src="images/Untitled.png" alt="Collezione di peluche" class="hero-image">
+
+      <!-- Banner from banner-test.html sobreposto à imagem -->
+      <div class="banner-container">
+        <div class="banner">
+          <div class="white-bg"></div>
+          <div class="color-bg"></div>
+          <div class="text-left">"Ecco L'offerta GUND:</div>
+          <div class="text-right">40% Di Sconto Dal 20 Aprile Al 5 Maggio!"</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container main-content">
+    <!-- Collections Section (UPDATED) -->
+    <section class="collections-section">
+      <header class="collections-header">
+        <h2 class="collections-title">
+          Esplora e trova il tuo preferito su TeddyShop
+        </h2>
+        <p class="collections-description">
+          "Siamo felici di presentare la nostra varietà di nuovi personaggi di
+          peluche! Scopri la collezione, pronta per essere amata, regalata o
+          diventare il tuo nuovo migliore amico"
+        </p>
+      </header>
+      <div class="collections-container">
+        <article class="collection-card">
+          <div class="card-content">
+            <img src="images/fantasyfriends.png" alt="Fantasy Friends Collection" class="card-image" />
+            <h3 class="card-title">Fantasy Friends</h3>
+            <p class="card-description">
+              Collezione di peluche mitici e fantastici: Perfetti per sognare ad
+              occhi aperti.
+            </p>
+          </div>
+        </article>
+        <article class="collection-card">
+          <div class="card-content">
+            <img src="images/vintagetreasures.png" alt="Vintage Treasures Collection" class="card-image" />
+            <h3 class="card-title">Vintage Treasures</h3>
+            <p class="card-description">
+              Collezione retrò, peluche tradizionali e storici, per un tocco di
+              nostalgia.
+            </p>
+          </div>
+        </article>
+        <article class="collection-card">
+          <div class="card-content">
+            <img src="images/wildadventures.png" alt="Wild Adventures Collection" class="card-image" />
+            <h3 class="card-title">Wild Adventures</h3>
+            <p class="card-description">
+              In Questa collezione troverai peluche di animali esotici per tutti
+              tipi di avventure.
+            </p>
+          </div>
+        </article>
+      </div>
     </section>
-    
-    <!-- Main Content -->
-    <div class="container main-content">
-        <!-- Collections Section (UPDATED) -->
-        <section class="collections-section">
-            <header class="collections-header">
-                <h2 class="collections-title">
-                    Esplora e trova il tuo preferito su TeddyShop
-                </h2>
-                <p class="collections-description">
-                    "Siamo felici di presentare la nostra varietà di nuovi personaggi di
-                    peluche! Scopri la collezione, pronta per essere amata, regalata o
-                    diventare il tuo nuovo migliore amico"
-                </p>
-            </header>
-            <div class="collections-container">
-                <article class="collection-card">
-                    <div class="card-content">
-                        <img src="images/fantasyfriends.png" alt="Fantasy Friends Collection" class="card-image" />
-                        <h3 class="card-title">Fantasy Friends</h3>
-                        <p class="card-description">
-                            Collezione di peluche mitici e fantastici: Perfetti per sognare ad
-                            occhi aperti.
-                        </p>
-                    </div>
-                </article>
-                <article class="collection-card">
-                    <div class="card-content">
-                        <img src="images/vintagetreasures.png" alt="Vintage Treasures Collection" class="card-image" />
-                        <h3 class="card-title">Vintage Treasures</h3>
-                        <p class="card-description">
-                            Collezione retrò, peluche tradizionali e storici, per un tocco di
-                            nostalgia.
-                        </p>
-                    </div>
-                </article>
-                <article class="collection-card">
-                    <div class="card-content">
-                        <img src="images/wildadventures.png" alt="Wild Adventures Collection" class="card-image" />
-                        <h3 class="card-title">Wild Adventures</h3>
-                        <p class="card-description">
-                            In Questa collezione troverai peluche di animali esotici per tutti
-                            tipi di avventure.
-                        </p>
-                    </div>
-                </article>
+
+    <section class="spring-banner">
+      <div class="spring-banner__container">
+        <img src="images/flower-icon.png" alt="Spring flower icon" class="spring-banner__icon" />
+        <h2 class="spring-banner__title">Acquista Per La Primavera</h2>
+      </div>
+    </section>
+
+    <!-- Nova seção de produtos com o layout atualizado -->
+    <section class="product-showcase">
+      <div class="product-container">
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-image-wrapper">
+              <img src="images/teddyorso.png" alt="Teddy - 10.5 Orso plush toy" class="product-image" />
+              <div class="product-info">
+                <h3 class="product-title">
+                  Teddy - 10.5 Orso
+                </h3>
+                <div class="product-rating">
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-half.png" alt="Half-filled star" class="star-icon" />
+                  <img src="images/star-empty.png" alt="Empty star" class="star-icon" />
+                </div>
+                <p class="product-price">$24</p>
+              </div>
             </div>
-        </section>
-        
-        <section class="spring-banner">
-            <div class="spring-banner__container">
-              <img
-                src="images/flower-icon.png"
-                alt="Spring flower icon"
-                class="spring-banner__icon"
-              />
-              <h2 class="spring-banner__title">Acquista Per La Primavera</h2>
+          </article>
+          <article class="product-card">
+            <div class="product-image-wrapper">
+              <img src="images/trixy.png" alt="Trixy - 8.5 Tricerapoto plush toy" class="product-image" />
+              <div class="product-info">
+                <h3 class="product-title">
+                  Trixy - 8.5 Tricerapoto
+                </h3>
+                <div class="product-rating">
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-half.png" alt="Half-filled star" class="star-icon" />
+                  <img src="images/star-empty.png" alt="Empty star" class="star-icon" />
+                </div>
+                <p class="product-price">$30</p>
+              </div>
             </div>
-          </section>
-        
-        <!-- Nova seção de produtos com o layout atualizado -->
-        <section class="product-showcase">
-          <div class="product-container">
-            <div class="product-grid">
-              <article class="product-card">
-                <div class="product-image-wrapper">
-                  <img
-                    src="images/teddyorso.png"
-                    alt="Teddy - 10.5 Orso plush toy"
-                    class="product-image"
-                  />
-                  <div class="product-info">
-                    <h3 class="product-title">
-                      Teddy - 10.5 Orso
-                    </h3>
-                    <div class="product-rating">
-                      <img
-                        src="images/star-filled.png"
-                        alt="Filled star"
-                        class="star-icon"
-                      />
-                      <img
-                        src="images/star-filled.png"
-                        alt="Filled star"
-                        class="star-icon"
-                      />
-                      <img
-                        src="images/star-filled.png"
-                        alt="Filled star"
-                        class="star-icon"
-                      />
-                      <img
-                        src="images/star-half.png"
-                        alt="Half-filled star"
-                        class="star-icon"
-                      />
-                      <img
-                        src="images/star-empty.png"
-                        alt="Empty star"
-                        class="star-icon"
-                      />
-                    </div>
-                    <p class="product-price">$24</p>
+          </article>
+          <article class="product-card">
+            <div class="product-image-wrapper">
+              <img src="images/bunnyconiglio.png" alt="Bunny - 10.5 Coniglio plush toy" class="product-image" />
+              <div class="product-info">
+                <h3 class="product-title">
+                  Bunny - 10.5 Coniglio
+                </h3>
+                <div class="product-rating">
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-half.png" alt="Half-filled star" class="star-icon" />
+                  <img src="images/star-empty.png" alt="Empty star" class="star-icon" />
+                </div>
+                <p class="product-price">$25</p>
+              </div>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-image-wrapper">
+              <img src="images/giraffa.png" alt="Gigi - 12.5 Giraffa plush toy" class="product-image" />
+              <div class="product-info">
+                <h3 class="product-title">
+                  Gigi - 12.5 Giraffa
+                </h3>
+                <div class="product-rating">
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-half.png" alt="Half-filled star" class="star-icon" />
+                  <img src="images/star-empty.png" alt="Empty star" class="star-icon" />
+                </div>
+                <p class="product-price">$30</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <button class="explore-button" aria-label="Explore products now">Esplora adesso</button>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" aria-labelledby="features-heading">
+      <header class="header-container">
+        <div class="flor-decorativa" aria-hidden="true">
+          <div class="petala"></div>
+          <div class="petala"></div>
+          <div class="petala"></div>
+          <div class="petala"></div>
+          <div class="petala"></div>
+          <div class="petala"></div>
+          <div class="petala"></div>
+          <div class="petala"></div>
+          <div class="petala"></div>
+          <div class="petala"></div>
+          <div class="centro"></div>
+        </div>
+        <h2 id="features-heading" class="section-title">
+          Ecco Cosa Possiamo Fare Per Te
+        </h2>
+        <div class="flor-decorativa" aria-hidden="true">
+          <div class="petala"></div>
+          <div class="petala"></div>
+          <div class="petala"></div>
+          <div class="petala"></div>
+          <div class="petala"></div>
+          <div class="petala"></div>
+          <div class="petala"></div>
+          <div class="petala"></div>
+          <div class="petala"></div>
+          <div class="petala"></div>
+          <div class="centro"></div>
+        </div>
+      </header>
+
+      <div class="features-row">
+        <article class="feature-card">
+          <img src="images/shipping.png" alt="Icona spedizioni" class="feature-icon" />
+          <h3 class="feature-title">Spedizioni sicure</h3>
+          <p class="feature-description">
+            Offriamo consegne rapide per garantirti che il tuo peluche arrivi a destinazione
+            in perfette condizioni.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <img src="images/quality.png" alt="Icona materiali" class="feature-icon" />
+          <h3 class="feature-title">Materiali di qualità</h3>
+          <p class="feature-description">
+            Siamo impegnati a utilizzare materiali di qualità per i nostri peluche, per garantirti un
+            prodotto che durerà nel tempo.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <img src="images/crown.png" alt="Icona servizio" class="feature-icon" />
+          <h3 class="feature-title">Servizio eccellente</h3>
+          <p class="feature-description">
+            La nostra assistenza clienti è a tua disposizione per rispondere a
+            tutte le tue domande e risolvere qualsiasi problema.
+          </p>
+        </article>
+      </div>
+
+      <div class="slider-navigation" role="tablist" aria-label="Navigazione caratteristiche">
+        <button class="dot" role="tab" aria-selected="true" aria-label="Pagina 1"></button>
+        <button class="dot-inactive" role="tab" aria-selected="false" aria-label="Pagina 2"></button>
+        <button class="dot-inactive" role="tab" aria-selected="false" aria-label="Pagina 3"></button>
+        <button class="dot-inactive" role="tab" aria-selected="false" aria-label="Pagina 4"></button>
+        <button class="dot-inactive" role="tab" aria-selected="false" aria-label="Pagina 5"></button>
+      </div>
+    </section>
+
+    <!-- Popular Products Section -->
+    <section class="product-showcase" aria-labelledby="popular-products-heading">
+      <div class="section-title-container">
+        <div class="section-title-wrapper">
+          <img src="images/peluche2.png" alt="Teddy icon">
+          <span id="popular-products-heading">I Peluche Più Ricercati</span>
+        </div>
+      </div>
+
+      <div class="product-container">
+        <div class="product-grid">
+          <!-- Butterfly Plush -->
+          <article class="product-card">
+            <div class="product-image-wrapper">
+              <img src="images/farfalla.png" alt="Aria - Farfalla" class="product-image" />
+              <div class="product-info">
+                <h3 class="product-title">Aria - 11,5 Farfalla</h3>
+                <div class="product-rating">
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                </div>
+                <p class="product-price">$35</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Dragon Plush -->
+          <article class="product-card">
+            <div class="product-image-wrapper">
+              <img src="images/drago.png" alt="Blaze - Drago" class="product-image" />
+              <div class="product-info">
+                <h3 class="product-title">Blaze - 13,5 Drago</h3>
+                <div class="product-rating">
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-empty.png" alt="Empty star" class="star-icon" />
+                </div>
+                <p class="product-price">$25</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Rabbit Plush -->
+          <article class="product-card">
+            <div class="product-image-wrapper">
+              <img src="images/lepre.png" alt="Clover - Lepre" class="product-image" />
+              <div class="product-info">
+                <h3 class="product-title">Clover - 10,5 Lepre</h3>
+                <div class="product-rating">
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-empty.png" alt="Empty star" class="star-icon" />
+                </div>
+                <p class="product-price">$30</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Elephant Plush -->
+          <article class="product-card">
+            <div class="product-image-wrapper">
+              <img src="images/elefante.png" alt="Jumbo - Elefante" class="product-image" />
+              <div class="product-info">
+                <h3 class="product-title">Jumbo - 10,5 Elefante</h3>
+                <div class="product-rating">
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
+                  <img src="images/star-empty.png" alt="Empty star" class="star-icon" />
+                </div>
+                <p class="product-price">$25</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <button class="explore-button" aria-label="Explore products now">Esplora adesso</button>
+    </section>
+
+
+
+    <!-- Special Features -->
+    <div class="special-title-section">
+      <div class="heart-icon-title-container">
+        <img src="images/heart-icon.png" alt="Heart icon">
+        <h2>"Aggiungi Un Tocco Speciale Al Tuo Peluche"</h2>
+      </div>
+    </div>
+
+    <!-- Special Sections Grid -->
+    <div class="special-sections-grid">
+      <!-- Gift Card Section (Left side, full height) -->
+      <div class="gift-card-section">
+        <div class="special-image">
+          <img src="images/gift-card-image.jpg" alt="Nursery with decorative wall art and bunny toy">
+        </div>
+        <div class="special-content">
+          <h3 class="special-title">Regala un sorriso con la nostra Gift Card</h3>
+          <p class="special-text">Vuoi fare un regalo ma non sai cosa scegliere? La nostra Gift Card è la soluzione
+            perfetta! Con essa, il destinatario potrà scegliere il peluche che preferisce tra la nostra vasta selezione.
+            Scegli l'importo, personalizza il biglietto d'auguri e rendi felice chi ami!</p>
+          <a href="#" class="discover-more">Scopri di più</a>
+        </div>
+      </div>
+
+      <!-- Weekly Offers Section (Top right) -->
+      <div class="weekly-offers-section">
+        <div class="special-image">
+          <img src="images/weekly-offers-image.jpg" alt="Kids room with mountain wall decoration">
+        </div>
+        <div class="special-content">
+          <h3 class="special-title">Le offerte speciali della settimana</h3>
+          <p class="special-text">Dai un'occhiata alle nostre offerte speciali! Troverai sconti imperdibili su alcuni
+            dei nostri peluche più popolari. Ma affrettati, le offerte sono per tempo limitato!</p>
+          <a href="#" class="discover-more">Scopri di più</a>
+        </div>
+      </div>
+
+      <!-- Custom Teddy Section (Bottom right) -->
+      <div class="custom-teddy-section">
+        <div class="special-image">
+          <img src="images/custom-teddy-image.jpg" alt="Kids room with giraffe plush toy">
+        </div>
+        <div class="special-content">
+          <h3 class="special-title">Personalizza il tuo peluche con noi</h3>
+          <p class="special-text">Vuoi rendere il tuo peluche ancora più speciale? Personalizzalo con il nome o la data!
+            Offriamo un servizio di personalizzazione per molti dei nostri peluche, rendendoli unici e indimenticabili.
+          </p>
+          <a href="#" class="discover-more">Scopri di più</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+      <div class="section-title-container">
+        <div class="section-title-wrapper">
+          <img src="images/heart-icon.png" alt="Heart icon">
+          <span>Opinioni Dei Nostri Clienti</span>
+        </div>
+      </div>
+
+      <div class="testimonials-carousel">
+        <div class="testimonials-container">
+          <div class="testimonial-slide">
+            <div class="testimonials-grid">
+              <div class="testimonial-card">
+                <div class="testimonial-header">
+                  <div class="testimonial-avatar avatar-m">M</div>
+                  <div>
+                    <div class="testimonial-name">Maria Cipolari</div>
+                    <div class="testimonial-info">Cagliari, mamma</div>
                   </div>
                 </div>
-              </article>
-              <article class="product-card">
-                <div class="product-image-wrapper">
-                  <img
-                    src="images/trixy.png"
-                    alt="Trixy - 8.5 Tricerapoto plush toy"
-                    class="product-image"
-                  />
-                  <div class="product-info">
-                    <h3 class="product-title">
-                      Trixy - 8.5 Tricerapoto
-                    </h3>
-                    <div class="product-rating">
-                      <img
-                        src="images/star-filled.png"
-                        alt="Filled star"
-                        class="star-icon"
-                      />
-                      <img
-                        src="images/star-filled.png"
-                        alt="Filled star"
-                        class="star-icon"
-                      />
-                      <img
-                        src="images/star-filled.png"
-                        alt="Filled star"
-                        class="star-icon"
-                      />
-                      <img
-                        src="images/star-half.png"
-                        alt="Half-filled star"
-                        class="star-icon"
-                      />
-                      <img
-                        src="images/star-empty.png"
-                        alt="Empty star"
-                        class="star-icon"
-                      />
-                    </div>
-                    <p class="product-price">$30</p>
+                <p class="testimonial-text">"Questo peluche è fantastico! La qualità del materiale è eccezionale e la
+                  sua morbidezza lo rende perfetto per abbracciarsi!"</p>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="testimonial-header">
+                  <div class="testimonial-avatar avatar-c">C</div>
+                  <div>
+                    <div class="testimonial-name">Claudio Boldi</div>
+                    <div class="testimonial-info">Operaio, genitore</div>
                   </div>
                 </div>
-              </article>
-              <article class="product-card">
-                <div class="product-image-wrapper">
-                  <img
-                    src="images/bunnyconiglio.png"
-                    alt="Bunny - 10.5 Coniglio plush toy"
-                    class="product-image"
-                  />
-                  <div class="product-info">
-                    <h3 class="product-title">
-                      Bunny - 10.5 Coniglio
-                    </h3>
-                    <div class="product-rating">
-                      <img
-                        src="images/star-filled.png"
-                        alt="Filled star"
-                        class="star-icon"
-                      />
-                      <img
-                        src="images/star-filled.png"
-                        alt="Filled star"
-                        class="star-icon"
-                      />
-                      <img
-                        src="images/star-filled.png"
-                        alt="Filled star"
-                        class="star-icon"
-                      />
-                      <img
-                        src="images/star-half.png"
-                        alt="Half-filled star"
-                        class="star-icon"
-                      />
-                      <img
-                        src="images/star-empty.png"
-                        alt="Empty star"
-                        class="star-icon"
-                      />
-                    </div>
-                    <p class="product-price">$25</p>
+                <p class="testimonial-text">"Non sono soddisfatto di questo peluche. Il materiale sembra economico e la
+                  cucitura è piuttosto approssimativa."</p>
+              </div>
+
+              <div class="testimonial-card">
+                <div class="testimonial-header">
+                  <div class="testimonial-avatar avatar-j">J</div>
+                  <div>
+                    <div class="testimonial-name">Jessica Merla</div>
+                    <div class="testimonial-info">Piacenza, nonna</div>
                   </div>
                 </div>
-              </article>
-              <article class="product-card">
-                <div class="product-image-wrapper">
-                  <img
-                    src="images/giraffa.png"
-                    alt="Gigi - 12.5 Giraffa plush toy"
-                    class="product-image"
-                  />
-                  <div class="product-info">
-                    <h3 class="product-title">
-                      Gigi - 12.5 Giraffa
-                    </h3>
-                    <div class="product-rating">
-                      <img
-                        src="images/star-filled.png"
-                        alt="Filled star"
-                        class="star-icon"
-                      />
-                      <img
-                        src="images/star-filled.png"
-                        alt="Filled star"
-                        class="star-icon"
-                      />
-                      <img
-                        src="images/star-filled.png"
-                        alt="Filled star"
-                        class="star-icon"
-                      />
-                      <img
-                        src="images/star-half.png"
-                        alt="Half-filled star"
-                        class="star-icon"
-                      />
-                      <img
-                        src="images/star-empty.png"
-                        alt="Empty star"
-                        class="star-icon"
-                      />
-                    </div>
-                    <p class="product-price">$30</p>
-                  </div>
-                </div>
-              </article>
+                <p class="testimonial-text">"Il peluche stesso è di alta qualità, con dettagli ben curati e una
+                  consistenza morbida e soffice. Consiglio vivamente questo negozio!"</p>
+              </div>
             </div>
           </div>
-          <button class="explore-button" aria-label="Explore products now">Esplora adesso</button>
-        </section>
-        
-<!-- Features Section -->
-<section class="features-section" aria-labelledby="features-heading">
-  <header class="header-container">
-    <div class="flor-decorativa" aria-hidden="true">
-      <div class="petala"></div>
-      <div class="petala"></div>
-      <div class="petala"></div>
-      <div class="petala"></div>
-      <div class="petala"></div>
-      <div class="petala"></div>
-      <div class="petala"></div>
-      <div class="petala"></div>
-      <div class="petala"></div>
-      <div class="petala"></div>
-      <div class="centro"></div>
-    </div>
-    <h2 id="features-heading" class="section-title">
-      Ecco Cosa Possiamo Fare Per Te
-    </h2>
-    <div class="flor-decorativa" aria-hidden="true">
-      <div class="petala"></div>
-      <div class="petala"></div>
-      <div class="petala"></div>
-      <div class="petala"></div>
-      <div class="petala"></div>
-      <div class="petala"></div>
-      <div class="petala"></div>
-      <div class="petala"></div>
-      <div class="petala"></div>
-      <div class="petala"></div>
-      <div class="centro"></div>
-    </div>
-  </header>
+        </div>
+      </div>
 
-  <div class="features-row">
-    <article class="feature-card">
-      <img
-        src="images/shipping.png"
-        alt="Icona spedizioni"
-        class="feature-icon"
-      />
-      <h3 class="feature-title">Spedizioni sicure</h3>
-      <p class="feature-description">
-        Offriamo consegne rapide per garantirti che il tuo peluche arrivi a destinazione
-        in perfette condizioni.
-      </p>
-    </article>
+      <div class="indicators">
+        <div class="indicator active"></div>
+        <div class="indicator"></div>
+        <div class="indicator"></div>
+        <div class="indicator"></div>
+        <div class="indicator"></div>
+      </div>
+    </section>
 
-    <article class="feature-card">
-      <img
-        src="images/quality.png"
-        alt="Icona materiali"
-        class="feature-icon"
-      />
-      <h3 class="feature-title">Materiali di qualità</h3>
-      <p class="feature-description">
-        Siamo impegnati a utilizzare materiali di qualità per i nostri peluche, per garantirti un
-        prodotto che durerà nel tempo.
-      </p>
-    </article>
 
-    <article class="feature-card">
-      <img
-        src="images/crown.png"
-        alt="Icona servizio"
-        class="feature-icon"
-      />
-      <h3 class="feature-title">Servizio eccellente</h3>
-      <p class="feature-description">
-        La nostra assistenza clienti è a tua disposizione per rispondere a
-        tutte le tue domande e risolvere qualsiasi problema.
-      </p>
-    </article>
   </div>
 
-  <div
-    class="slider-navigation"
-    role="tablist"
-    aria-label="Navigazione caratteristiche"
-  >
-    <button
-      class="dot"
-      role="tab"
-      aria-selected="true"
-      aria-label="Pagina 1"
-    ></button>
-    <button
-      class="dot-inactive"
-      role="tab"
-      aria-selected="false"
-      aria-label="Pagina 2"
-    ></button>
-    <button
-      class="dot-inactive"
-      role="tab"
-      aria-selected="false"
-      aria-label="Pagina 3"
-    ></button>
-    <button
-      class="dot-inactive"
-      role="tab"
-      aria-selected="false"
-      aria-label="Pagina 4"
-    ></button>
-    <button
-      class="dot-inactive"
-      role="tab"
-      aria-selected="false"
-      aria-label="Pagina 5"
-    ></button>
-  </div>
-</section>
-        
-    <!-- Popular Products Section -->
-<section class="product-showcase" aria-labelledby="popular-products-heading">
-    <div class="section-title-container">
-        <div class="section-title-wrapper">
-            <img src="images/peluche2.png" alt="Teddy icon">
-            <span id="popular-products-heading">I Peluche Più Ricercati</span>
-        </div>
-    </div>
-    
-    <div class="product-container">
-        <div class="product-grid">
-            <!-- Butterfly Plush -->
-            <article class="product-card">
-                <div class="product-image-wrapper">
-                    <img
-                        src="images/farfalla.png"
-                        alt="Aria - Farfalla"
-                        class="product-image"
-                    />
-                    <div class="product-info">
-                        <h3 class="product-title">Aria - 11,5 Farfalla</h3>
-                        <div class="product-rating">
-                            <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
-                            <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
-                            <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
-                            <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
-                            <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
-                        </div>
-                        <p class="product-price">$35</p>
-                    </div>
-                </div>
-            </article>
-            
-            <!-- Dragon Plush -->
-            <article class="product-card">
-                <div class="product-image-wrapper">
-                    <img
-                        src="images/drago.png"
-                        alt="Blaze - Drago"
-                        class="product-image"
-                    />
-                    <div class="product-info">
-                        <h3 class="product-title">Blaze - 13,5 Drago</h3>
-                        <div class="product-rating">
-                            <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
-                            <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
-                            <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
-                            <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
-                            <img src="images/star-empty.png" alt="Empty star" class="star-icon" />
-                        </div>
-                        <p class="product-price">$25</p>
-                    </div>
-                </div>
-            </article>
-            
-            <!-- Rabbit Plush -->
-            <article class="product-card">
-                <div class="product-image-wrapper">
-                    <img
-                        src="images/lepre.png"
-                        alt="Clover - Lepre"
-                        class="product-image"
-                    />
-                    <div class="product-info">
-                        <h3 class="product-title">Clover - 10,5 Lepre</h3>
-                        <div class="product-rating">
-                            <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
-                            <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
-                            <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
-                            <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
-                            <img src="images/star-empty.png" alt="Empty star" class="star-icon" />
-                        </div>
-                        <p class="product-price">$30</p>
-                    </div>
-                </div>
-            </article>
-            
-            <!-- Elephant Plush -->
-            <article class="product-card">
-                <div class="product-image-wrapper">
-                    <img
-                        src="images/elefante.png"
-                        alt="Jumbo - Elefante"
-                        class="product-image"
-                    />
-                    <div class="product-info">
-                        <h3 class="product-title">Jumbo - 10,5 Elefante</h3>
-                        <div class="product-rating">
-                            <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
-                            <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
-                            <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
-                            <img src="images/star-filled.png" alt="Filled star" class="star-icon" />
-                            <img src="images/star-empty.png" alt="Empty star" class="star-icon" />
-                        </div>
-                        <p class="product-price">$25</p>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </div>
-    
-    <button class="explore-button" aria-label="Explore products now">Esplora adesso</button>
-</section>
-            
 
-        
-        <!-- Special Features -->
-        <div class="special-title-section">
-            <div class="heart-icon-title-container">
-                <img src="images/heart-icon.png" alt="Heart icon">
-                <h2>"Aggiungi Un Tocco Speciale Al Tuo Peluche"</h2>
-            </div>
-        </div>
-        
-        <!-- Special Sections Grid -->
-        <div class="special-sections-grid">
-            <!-- Gift Card Section (Left side, full height) -->
-            <div class="gift-card-section">
-                <div class="special-image">
-                    <img src="images/gift-card-image.jpg" alt="Nursery with decorative wall art and bunny toy">
-                </div>
-                <div class="special-content">
-                    <h3 class="special-title">Regala un sorriso con la nostra Gift Card</h3>
-                    <p class="special-text">Vuoi fare un regalo ma non sai cosa scegliere? La nostra Gift Card è la soluzione perfetta! Con essa, il destinatario potrà scegliere il peluche che preferisce tra la nostra vasta selezione. Scegli l'importo, personalizza il biglietto d'auguri e rendi felice chi ami!</p>
-                    <a href="#" class="discover-more">Scopri di più</a>
-                </div>
-            </div>
-            
-            <!-- Weekly Offers Section (Top right) -->
-            <div class="weekly-offers-section">
-                <div class="special-image">
-                    <img src="images/weekly-offers-image.jpg" alt="Kids room with mountain wall decoration">
-                </div>
-                <div class="special-content">
-                    <h3 class="special-title">Le offerte speciali della settimana</h3>
-                    <p class="special-text">Dai un'occhiata alle nostre offerte speciali! Troverai sconti imperdibili su alcuni dei nostri peluche più popolari. Ma affrettati, le offerte sono per tempo limitato!</p>
-                    <a href="#" class="discover-more">Scopri di più</a>
-                </div>
-            </div>
-            
-            <!-- Custom Teddy Section (Bottom right) -->
-            <div class="custom-teddy-section">
-                <div class="special-image">
-                    <img src="images/custom-teddy-image.jpg" alt="Kids room with giraffe plush toy">
-                </div>
-                <div class="special-content">
-                    <h3 class="special-title">Personalizza il tuo peluche con noi</h3>
-                    <p class="special-text">Vuoi rendere il tuo peluche ancora più speciale? Personalizzalo con il nome o la data! Offriamo un servizio di personalizzazione per molti dei nostri peluche, rendendoli unici e indimenticabili.</p>
-                    <a href="#" class="discover-more">Scopri di più</a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Reviews Section -->
-        <section class="reviews-section">
-            <div class="section-title-container">
-                <div class="section-title-wrapper">
-                    <img src="images/heart-icon.png" alt="Heart icon">
-                    <span>Opinioni Dei Nostri Clienti</span>
-                </div>
-            </div>
-            
-            <div class="testimonials-carousel">
-                <div class="testimonials-container">
-                    <div class="testimonial-slide">
-                        <div class="testimonials-grid">
-                            <div class="testimonial-card">
-                                <div class="testimonial-header">
-                                    <div class="testimonial-avatar avatar-m">M</div>
-                                    <div>
-                                        <div class="testimonial-name">Maria Cipolari</div>
-                                        <div class="testimonial-info">Cagliari, mamma</div>
-                                    </div>
-                                </div>
-                                <p class="testimonial-text">"Questo peluche è fantastico! La qualità del materiale è eccezionale e la sua morbidezza lo rende perfetto per abbracciarsi!"</p>
-                            </div>
-                            
-                            <div class="testimonial-card">
-                                <div class="testimonial-header">
-                                    <div class="testimonial-avatar avatar-c">C</div>
-                                    <div>
-                                        <div class="testimonial-name">Claudio Boldi</div>
-                                        <div class="testimonial-info">Operaio, genitore</div>
-                                    </div>
-                                </div>
-                                <p class="testimonial-text">"Non sono soddisfatto di questo peluche. Il materiale sembra economico e la cucitura è piuttosto approssimativa."</p>
-                            </div>
-                            
-                            <div class="testimonial-card">
-                                <div class="testimonial-header">
-                                    <div class="testimonial-avatar avatar-j">J</div>
-                                    <div>
-                                        <div class="testimonial-name">Jessica Merla</div>
-                                        <div class="testimonial-info">Piacenza, nonna</div>
-                                    </div>
-                                </div>
-                                <p class="testimonial-text">"Il peluche stesso è di alta qualità, con dettagli ben curati e una consistenza morbida e soffice. Consiglio vivamente questo negozio!"</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="indicators">
-                <div class="indicator active"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-            </div>
-        </section>
-        
-
-    </div>
-    
-
-<!-- Footer -->
-<footer class="footer">
+  <!-- Footer -->
+  <footer class="footer">
     <section class="newsletter">
       <div class="newsletter-content">
         <h2 class="newsletter-title">TeddyShop Newsletter</h2>
@@ -638,12 +505,8 @@
       </div>
       <div class="newsletter-actions">
         <form class="newsletter-form">
-          <input
-            type="email"
-            placeholder="inserisci la tua email"
-            class="newsletter-input"
-            aria-label="Email address for newsletter"
-          />
+          <input type="email" placeholder="inserisci la tua email" class="newsletter-input"
+            aria-label="Email address for newsletter" />
           <button type="submit" class="newsletter-button">
             Isciviti adesso
           </button>
@@ -709,11 +572,7 @@
     <div class="credits">
       <div class="credits-content">
         <div class="logo-container">
-          <img
-            src="images/logo.png"
-            alt="TeddyShop Logo"
-            class="logo-image"
-          />
+          <img src="images/logo.png" alt="TeddyShop Logo" class="logo-image" />
           <div class="logo-text">Teddy Shop</div>
         </div>
         <div class="copyright">
@@ -722,8 +581,9 @@
       </div>
     </div>
   </footer>
-    
-<script src="script.js"></script>
+
+  <script src="script.js"></script>
 
 </body>
+
 </html>
