@@ -702,23 +702,26 @@ p {
     justify-content: center;
     gap: 0;
     font-family: "Roboto Serif", sans-serif;
-    font-size: var(--font-3xl);
+    font-size: var(--font-4xl);
     color: var(--dark-brown);
-    font-weight: 600;
+    font-weight: 700;
     text-align: center;
     line-height: 1.2;
     flex-wrap: nowrap;
     padding: 0 var(--spacing-md);
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     position: relative;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
 }
 
 .features-section .section-title {
-    margin: 0 12px;
+    margin: 0 15px;
     position: relative;
     z-index: 1;
     white-space: nowrap;
-    font-size: var(--font-3xl);
+    font-size: var(--font-4xl);
+    display: inline-block;
 }
 
 .features-row {
@@ -1277,29 +1280,30 @@ p {
 /* Flower for feature section title */
 .flor-decorativa {
     position: relative;
-    width: 40px;
-    height: 40px;
+    width: 55px;
+    height: 55px;
     flex-shrink: 0;
     display: inline-block;
-    margin: 0 14px;
+    margin: 0 18px;
 }
 
 .flor-decorativa .centro {
     position: absolute;
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     background-color: var(--white);
     border-radius: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 .flor-decorativa .petala {
     position: absolute;
-    width: 12px;
-    height: 20px;
+    width: 16px;
+    height: 26px;
     background-color: var(--light-peach);
     border-radius: 50% 50% 50% 50%;
     top: 50%;
@@ -1448,11 +1452,25 @@ p {
     }
 
     .header-container {
-        font-size: var(--font-2xl);
+        font-size: var(--font-3xl);
+        font-weight: 700;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+        padding: 0 5px;
+        white-space: nowrap;
     }
-
+    
     .features-section .section-title {
-        font-size: var(--font-2xl);
+        font-size: var(--font-3xl);
+        margin: 0 10px;
+        white-space: nowrap;
+    }
+    
+    /* Keep flowers inline with text */
+    .features-section .flor-decorativa {
+        width: 35px;
+        height: 35px;
+        display: inline-flex;
+        margin: 0 5px;
     }
 
     .features-row {
@@ -1543,6 +1561,16 @@ p {
         --font-3xl: 26px;
         --font-2xl: 24px;
         --font-xl: 20px;
+    }
+    
+    /* Keep header container flowers and text on same line for mobile */
+    .header-container {
+        justify-content: center;
+        flex-wrap: nowrap;
+        width: auto;
+        max-width: 100%;
+        overflow-x: auto;
+        padding: 0 5px;
     }
 
     /* Improved header layout for small screens */
@@ -1722,11 +1750,21 @@ p {
         margin-top: 30px;
     }
 
-    /* Smaller flower size */
+    /* Maintain larger flower size on tablets */
     .flor-decorativa {
-        width: 20px;
+        width: 40px;
+        height: 40px;
+        margin: 0 10px;
+    }
+    
+    .flor-decorativa .centro {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .flor-decorativa .petala {
+        width: 12px;
         height: 20px;
-        margin: 0 5px;
     }
 }
 
@@ -1837,13 +1875,18 @@ p {
     }
 
     .header-container {
-        font-size: var(--font-lg);
-        gap: 10px;
+        font-size: var(--font-xl);
+        font-weight: 700;
+        gap: 5px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+        padding: 0 5px;
+        white-space: nowrap;
     }
 
     .features-section .section-title {
         font-size: var(--font-lg);
         margin: 0 5px;
+        white-space: nowrap;
     }
 
     /* Smallest mobile adjustments */
@@ -1875,26 +1918,40 @@ p {
         padding-top: 30px;
     }
 
-    /* Smallest flower */
+    /* Keep flowers small but on same line as text */
     .flor-decorativa {
-        width: 16px;
-        height: 16px;
+        width: 28px;
+        height: 28px;
         margin: 0 3px;
+        display: inline-flex;
+        flex-shrink: 0;
     }
 
     .flor-decorativa .petala {
-        width: 5px;
-        height: 9px;
+        width: 8px;
+        height: 14px;
     }
 
     .flor-decorativa .centro {
-        width: 7px;
-        height: 7px;
+        width: 10px;
+        height: 10px;
     }
 }
 
 /* Extra small devices */
 @media (max-width: 480px) {
+    /* Keep header container very compact */
+    .header-container {
+        gap: 3px;
+        padding: 0 2px;
+    }
+    
+    /* Make flowers even smaller on tiny screens */
+    .features-section .flor-decorativa {
+        width: 22px;
+        height: 22px;
+        margin: 0 2px;
+    }
 
     /* Make menu button easier to tap */
     .mobile-menu-btn {
