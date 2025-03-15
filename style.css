@@ -442,13 +442,14 @@ p {
     align-items: center;
     justify-content: center;
     width: 80%;
-    max-width: 550px;
-    height: 65px;
+    max-width: 600px;
+    height: 70px;
     border: 2px solid var(--yellow-gold);
     border-radius: var(--radius-xl);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-    padding: 0;
+    padding: 0 20px;
     background-color: var(--white);
+    white-space: nowrap;
 }
 
 .spring-banner__container>* {
@@ -458,22 +459,23 @@ p {
 }
 
 .spring-banner__icon {
-    width: 85px;
-    height: 85px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
-    margin-right: 0;
+    margin-right: 8px;
     flex-shrink: 0;
 }
 
 .spring-banner__title {
     font-family: "Roboto Serif", serif;
-    font-size: var(--font-3xl);
+    font-size: var(--font-4xl);
     font-style: italic;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--dark-brown);
     text-align: center;
     margin: 0;
     padding-left: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Product Showcase */
@@ -623,17 +625,18 @@ p {
     align-items: center;
     justify-content: center;
     background-color: var(--white);
-    border: 2px solid var(--gold);
+    border: 3px solid var(--gold);
     border-radius: var(--radius-xl);
-    padding: 0.1rem 2.5rem;
-    font-size: var(--font-lg);
-    font-weight: 600;
-    color: var(--brown);
-    box-shadow: 0 4px 12px rgba(198, 156, 123, 0.15);
+    padding: 0.5rem 2.5rem;
+    font-size: var(--font-2xl);
+    font-weight: 700;
+    color: var(--dark-brown);
+    box-shadow: 0 6px 15px rgba(198, 156, 123, 0.25);
     position: relative;
     max-width: 90%;
     margin: 0 auto;
     z-index: 50;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     /* Ensure it appears above the background */
 }
 
@@ -1501,13 +1504,15 @@ p {
     }
 
     .spring-banner {
-        max-width: 500px;
+        max-width: 530px;
         height: 100px;
     }
 
     .spring-banner__container {
-        width: 450px;
+        width: 480px;
         height: 60px;
+        padding: 0 15px;
+        white-space: nowrap;
     }
 
     .spring-banner__icon {
@@ -1516,7 +1521,9 @@ p {
     }
 
     .spring-banner__title {
-        font-size: var(--font-2xl);
+        font-size: var(--font-3xl);
+        font-weight: 700;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
     }
 
     /* Further adjust product showcase and reviews */
@@ -1532,9 +1539,9 @@ p {
 @media (max-width: 768px) {
     :root {
         --font-5xl: 32px;
-        --font-4xl: 28px;
-        --font-3xl: 24px;
-        --font-2xl: 22px;
+        --font-4xl: 30px;
+        --font-3xl: 26px;
+        --font-2xl: 24px;
         --font-xl: 20px;
     }
 
@@ -1668,10 +1675,13 @@ p {
 
     /* Mobile title adjustments */
     .section-title-wrapper {
-        padding: 0.6rem 1.5rem;
-        font-size: var(--font-base);
-        max-width: 80%;
+        padding: 0.7rem 1.7rem;
+        font-size: var(--font-md);
+        font-weight: 700;
+        max-width: 85%;
         margin: 0 auto;
+        box-shadow: 0 6px 18px rgba(198, 156, 123, 0.3);
+        border-width: 3px;
     }
 
     .section-title-wrapper img {
@@ -1722,9 +1732,9 @@ p {
 
 @media (max-width: 640px) {
     :root {
-        --font-4xl: 26px;
-        --font-3xl: 22px;
-        --font-2xl: 20px;
+        --font-4xl: 28px;
+        --font-3xl: 24px;
+        --font-2xl: 22px;
         --font-xl: 18px;
         --font-lg: 16px;
     }
@@ -1804,14 +1814,15 @@ p {
     }
 
     .spring-banner {
-        max-width: 320px;
+        max-width: 360px;
         height: 80px;
     }
 
     .spring-banner__container {
-        width: 290px;
+        width: 330px;
         height: 50px;
-        padding: 0 15px;
+        padding: 0 10px;
+        white-space: nowrap;
     }
 
     .spring-banner__icon {
@@ -1820,7 +1831,9 @@ p {
     }
 
     .spring-banner__title {
-        font-size: var(--font-lg);
+        font-size: var(--font-xl);
+        font-weight: 700;
+        letter-spacing: 0.5px;
     }
 
     .header-container {
@@ -1835,10 +1848,13 @@ p {
 
     /* Smallest mobile adjustments */
     .section-title-wrapper {
-        padding: 0.5rem 1.2rem;
-        font-size: var(--font-xs);
-        max-width: 85%;
+        padding: 0.6rem 1.4rem;
+        font-size: var(--font-sm);
+        font-weight: 700;
+        max-width: 90%;
         margin: 0 auto;
+        border-width: 3px;
+        box-shadow: 0 5px 15px rgba(198, 156, 123, 0.35);
     }
 
     .section-title-wrapper img {
@@ -1972,13 +1988,12 @@ p {
 
 .text-left {
     position: absolute;
-    left: 40px;
+    left: 80px;
     top: 0;
     height: 100%;
     display: flex;
     align-items: center;
-    font-weight: bold;
-    font-size: 20px;
+    font-size: 27px;
     color: #333;
     z-index: 1;
 }
@@ -1992,7 +2007,6 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
     font-size: 24px;
     color: white;
     z-index: 1;
