@@ -828,15 +828,15 @@ p {
 }
 
 .heart-icon-title-container img {
-    width: 38px;
-    height: 38px;
-    margin-right: 15px;
+    width: 48px;
+    height: 48px;
+    margin-right: 18px;
 }
 
 .heart-icon-title-container h2 {
-    font-size: var(--font-3xl);
-    color: var(--brown);
+    font-size: 40px;
     font-weight: 600;
+    color: var(--brown);
 }
 
 /* Special sections grid */
@@ -989,6 +989,10 @@ p {
     /* Increased to allow space for the title */
 }
 
+.reviews-section .section-title-wrapper span {
+    font-style: italic;
+}
+
 /* Carousel indicators */
 .indicators {
     display: flex;
@@ -1041,49 +1045,63 @@ p {
 }
 
 .testimonial-card {
-    padding: 1.5rem;
-    background-color: var(--white);
-    border-radius: var(--radius-md);
-    border: 1px solid rgba(230, 225, 215, 0.7);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.03);
-}
+    background-color: #ffffff; /* White background */
+    border: 2px solid #d8c59b; /* Golden/beige border */
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column-reverse; /* Reverse to put text on top */
+  }
 
-.testimonial-header {
+  .testimonial-header {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
-}
+  }
 
-.testimonial-avatar {
+  .testimonial-avatar {
     width: 50px;
     height: 50px;
-    background-color: #f0f0f0;
-    color: #7a6c5d;
     border-radius: 50%;
+    background-color: white;
+    color: #333;  /* Dark text color for contrast */
+    border: 1px solid #d8c59b;  /* Light gold border */
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    margin-right: 1rem;
-    font-size: var(--font-md);
-}
+    font-size: 22px;
+    margin-right: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+  }
 
-.testimonial-name {
-    font-weight: 500;
-    font-size: var(--font-base);
-    color: var(--brown);
-}
+  .avatar-m, .avatar-c, .avatar-j {
+    background-color: white !important;
+    color: #333 !important;
+  }
 
-.testimonial-info {
-    font-size: var(--font-sm);
-    color: #777;
-}
+  .testimonial-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+  }
+
+  .testimonial-info {
+    font-size: 14px;
+    color: #666;
+  }
 
 .testimonial-text {
     font-style: italic;
-    color: #555;
+    color: #333;
     line-height: 1.5;
-}
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+
+  
 
 /* Avatar specific colors */
 .avatar-m,
@@ -1641,8 +1659,8 @@ p {
     }
 
     .testimonials-grid {
-        grid-template-columns: 1fr;
-    }
+        gap: 25px;
+      }
 
     .main-nav {
         display: none;
