@@ -28,6 +28,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Inicializa a navegação da seção Features
     initializeFeaturesNavigation();
+    
+    // Make special sections and reviews responsive
+    makeSpecialSectionsResponsive();
+    
+    // Handle touch events for mobile
+    setupTouchInteractions();
+    
+    // Improve performance with passive event listeners
+    improvePerformance();
 });
 
 // Função para inicializar a navegação dos dots da Features Section
@@ -117,19 +126,65 @@ function initializeStarRatings() {
 function initializeTestimonialCarousel() {
     const testimonialContainer = document.querySelector('.testimonials-container');
     const indicators = document.querySelectorAll('.reviews-section .indicators .indicator');
+    const testimonialSlide = document.querySelector('.testimonial-slide');
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+    const testimonialGrid = document.querySelector('.testimonials-grid');
 
     // Check if elements exist
     if (!testimonialContainer || indicators.length === 0) return;
 
     // Initialize variables
     let currentSlide = 0;
+    let isMobile = false;
+    let isTablet = false;
 
-    // Function to show a specific slide (but actually keep content visible)
+    // Function to update the layout based on screen size
+    function updateLayout() {
+        const windowWidth = window.innerWidth;
+        
+        // Update layout variables based on screen width
+        if (windowWidth <= 640) {
+            isMobile = true;
+            isTablet = false;
+            // Make sure all cards are initially visible on mobile
+            testimonialCards.forEach(card => {
+                card.style.display = 'flex';
+            });
+            if (testimonialGrid) {
+                testimonialGrid.style.gridTemplateColumns = '1fr';
+            }
+        } else if (windowWidth <= 992) {
+            isMobile = false;
+            isTablet = true;
+            // Reset display style
+            testimonialCards.forEach(card => {
+                card.style.display = 'flex';
+            });
+            if (testimonialGrid) {
+                testimonialGrid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+            }
+        } else {
+            isMobile = false;
+            isTablet = false;
+            // Reset display style
+            testimonialCards.forEach(card => {
+                card.style.display = 'flex';
+            });
+            if (testimonialGrid) {
+                testimonialGrid.style.gridTemplateColumns = 'repeat(3, 1fr)';
+            }
+        }
+        
+        // Force re-render of current slide
+        showSlide(0);
+    }
+
+    // Function to show a specific slide
     function showSlide(index) {
-        // Always keep the container at the original position to show testimonials
+        // Reset transform to keep all testimonials visible
         testimonialContainer.style.transform = 'translateX(0)';
-
-        // Update indicators to show interactivity
+        
+        // Update indicators
         indicators.forEach((indicator, i) => {
             indicator.classList.toggle('active', i === index);
         });
@@ -144,6 +199,10 @@ function initializeTestimonialCarousel() {
             showSlide(index);
         });
     });
+
+    // Initialize layout and watch for window resize
+    updateLayout();
+    window.addEventListener('resize', updateLayout);
 
     // Initialize with first slide
     showSlide(0);
@@ -351,4 +410,347 @@ function setupProductShowcase() {
             });
         });
     }
+}
+
+// Function to make special sections and reviews responsive
+function makeSpecialSectionsResponsive() {
+    // Handle special sections grid
+    const specialSectionsGrid = document.querySelector('.special-sections-grid');
+    const specialSections = document.querySelectorAll('.special-sections-grid > div');
+    
+    // Handle "Aggiungi Un Tocco Speciale" title and heart icon
+    const specialTitleSection = document.querySelector('.special-title-section');
+    const heartIconTitleContainer = document.querySelector('.heart-icon-title-container');
+    const heartIconTitle = heartIconTitleContainer?.querySelector('h2');
+    const heartIcon = heartIconTitleContainer?.querySelector('img');
+    
+    // Function to update responsive layout
+    function updateResponsiveLayout() {
+        const windowWidth = window.innerWidth;
+        
+        // Ensure the special title is responsive
+        if (heartIconTitleContainer) {
+            if (windowWidth <= 480) {
+                heartIconTitleContainer.style.flexDirection = 'column';
+                if (heartIcon) {
+                    heartIcon.style.marginRight = '0';
+                    heartIcon.style.marginBottom = '5px';
+                    heartIcon.style.width = '28px';
+                    heartIcon.style.height = '28px';
+                }
+                if (heartIconTitle) {
+                    heartIconTitle.style.fontSize = '20px';
+                    heartIconTitle.style.textAlign = 'center';
+                    heartIconTitle.style.width = '100%';
+                    heartIconTitle.style.padding = '0 5px';
+                    heartIconTitle.style.lineHeight = '1.3';
+                }
+            } else if (windowWidth <= 640) {
+                heartIconTitleContainer.style.flexDirection = 'column';
+                if (heartIcon) {
+                    heartIcon.style.marginRight = '0';
+                    heartIcon.style.marginBottom = '10px';
+                    heartIcon.style.width = '32px';
+                    heartIcon.style.height = '32px';
+                }
+                if (heartIconTitle) {
+                    heartIconTitle.style.fontSize = 'var(--font-lg)';
+                    heartIconTitle.style.textAlign = 'center';
+                    heartIconTitle.style.width = '100%';
+                    heartIconTitle.style.padding = '0 15px';
+                    heartIconTitle.style.lineHeight = '1.4';
+                }
+            } else if (windowWidth <= 768) {
+                heartIconTitleContainer.style.flexDirection = 'column';
+                if (heartIcon) {
+                    heartIcon.style.marginRight = '0';
+                    heartIcon.style.marginBottom = '10px';
+                }
+                if (heartIconTitle) {
+                    heartIconTitle.style.fontSize = 'var(--font-xl)';
+                    heartIconTitle.style.textAlign = 'center';
+                    heartIconTitle.style.width = '100%';
+                }
+            } else {
+                // Reset for desktop
+                heartIconTitleContainer.style.flexDirection = '';
+                if (heartIcon) {
+                    heartIcon.style.marginRight = '18px';
+                    heartIcon.style.marginBottom = '';
+                    heartIcon.style.width = '48px';
+                    heartIcon.style.height = '48px';
+                }
+                if (heartIconTitle) {
+                    heartIconTitle.style.fontSize = '50px';
+                    heartIconTitle.style.textAlign = 'center';
+                    heartIconTitle.style.width = '';
+                    heartIconTitle.style.padding = '';
+                    heartIconTitle.style.lineHeight = '';
+                }
+            }
+        }
+        
+        // Apply responsive styles for special sections
+        if (windowWidth <= 768) {
+            // Force proper display for special content to ensure visibility
+            const specialContents = document.querySelectorAll('.special-content');
+            specialContents.forEach(content => {
+                content.style.display = 'flex';
+                content.style.flexDirection = 'column';
+                
+                // Ensure child elements are also displayed correctly
+                const title = content.querySelector('.special-title');
+                const text = content.querySelector('.special-text');
+                const link = content.querySelector('.discover-more');
+                
+                if (title) {
+                    title.style.display = 'block';
+                    title.style.visibility = 'visible';
+                    title.style.opacity = '1';
+                }
+                
+                if (text) {
+                    text.style.display = 'block';
+                    text.style.visibility = 'visible';
+                    text.style.opacity = '1';
+                }
+                
+                if (link) {
+                    link.style.display = 'inline-block';
+                }
+            });
+            
+            // Weekly offers and custom teddy sections need special handling
+            const weeklyOffers = document.querySelector('.weekly-offers-section');
+            const customTeddy = document.querySelector('.custom-teddy-section');
+            
+            // Handle weekly offers section specifically
+            if (weeklyOffers) {
+                weeklyOffers.style.flexDirection = 'column';
+                weeklyOffers.style.width = '100%';
+                
+                const weeklyTitle = weeklyOffers.querySelector('.special-title');
+                const weeklyText = weeklyOffers.querySelector('.special-text');
+                const weeklyImage = weeklyOffers.querySelector('.special-image');
+                const weeklyContent = weeklyOffers.querySelector('.special-content');
+                
+                if (weeklyImage) {
+                    weeklyImage.style.width = '100%';
+                    weeklyImage.style.height = '200px';
+                }
+                
+                if (weeklyContent) {
+                    weeklyContent.style.display = 'flex';
+                    weeklyContent.style.flexDirection = 'column';
+                    weeklyContent.style.width = '100%';
+                    weeklyContent.style.padding = '20px';
+                    weeklyContent.style.boxSizing = 'border-box';
+                }
+                
+                if (weeklyTitle) {
+                    weeklyTitle.style.display = 'block';
+                    weeklyTitle.style.visibility = 'visible';
+                    weeklyTitle.style.margin = '0 0 10px 0';
+                }
+                
+                if (weeklyText) {
+                    weeklyText.style.display = 'block';
+                    weeklyText.style.visibility = 'visible';
+                    weeklyText.style.margin = '0 0 15px 0';
+                }
+            }
+            
+            // Handle custom teddy section specifically
+            if (customTeddy) {
+                customTeddy.style.flexDirection = 'column';
+                customTeddy.style.width = '100%';
+                
+                const teddyTitle = customTeddy.querySelector('.special-title');
+                const teddyText = customTeddy.querySelector('.special-text');
+                const teddyImage = customTeddy.querySelector('.special-image');
+                const teddyContent = customTeddy.querySelector('.special-content');
+                
+                if (teddyImage) {
+                    teddyImage.style.width = '100%';
+                    teddyImage.style.height = '200px';
+                }
+                
+                if (teddyContent) {
+                    teddyContent.style.display = 'flex';
+                    teddyContent.style.flexDirection = 'column';
+                    teddyContent.style.width = '100%';
+                    teddyContent.style.padding = '20px';
+                    teddyContent.style.boxSizing = 'border-box';
+                }
+                
+                if (teddyTitle) {
+                    teddyTitle.style.display = 'block';
+                    teddyTitle.style.visibility = 'visible';
+                    teddyTitle.style.margin = '0 0 10px 0';
+                }
+                
+                if (teddyText) {
+                    teddyText.style.display = 'block';
+                    teddyText.style.visibility = 'visible';
+                    teddyText.style.margin = '0 0 15px 0';
+                }
+            }
+            
+            // Ensure gift card section displays properly
+            const giftCardSection = document.querySelector('.gift-card-section');
+            if (giftCardSection) {
+                const giftCardImage = giftCardSection.querySelector('.special-image');
+                const giftCardContent = giftCardSection.querySelector('.special-content');
+                
+                if (giftCardImage) giftCardImage.style.height = '200px';
+                if (giftCardContent) giftCardContent.style.display = 'flex';
+            }
+        } else {
+            // Reset styles for desktop
+            specialSections.forEach(section => {
+                section.style.flexDirection = '';
+                section.style.width = '';
+                
+                const image = section.querySelector('.special-image');
+                if (image) {
+                    image.style.width = '';
+                    image.style.height = '';
+                }
+                
+                const content = section.querySelector('.special-content');
+                if (content) {
+                    content.style.display = '';
+                    content.style.width = '';
+                    content.style.padding = '';
+                }
+                
+                const title = section.querySelector('.special-title');
+                const text = section.querySelector('.special-text');
+                const link = section.querySelector('.discover-more');
+                
+                if (title) {
+                    title.style.display = '';
+                    title.style.visibility = '';
+                    title.style.margin = '';
+                }
+                
+                if (text) {
+                    text.style.display = '';
+                    text.style.visibility = '';
+                    text.style.margin = '';
+                }
+                
+                if (link) {
+                    link.style.display = '';
+                }
+            });
+        }
+    }
+    
+    // Initial layout update
+    updateResponsiveLayout();
+    
+    // Update on window resize
+    window.addEventListener('resize', updateResponsiveLayout);
+    
+    // Also force a layout update after a slight delay to ensure everything is properly displayed
+    setTimeout(updateResponsiveLayout, 100);
+}
+
+// Setup touch interactions for better mobile experience
+function setupTouchInteractions() {
+    // Touch interaction for testimonial carousel
+    const testimonialContainer = document.querySelector('.testimonials-container');
+    const indicators = document.querySelectorAll('.indicator');
+    
+    if (testimonialContainer && indicators.length > 0) {
+        let startX = 0;
+        let endX = 0;
+        let currentIndex = 0;
+        
+        testimonialContainer.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        }, { passive: true });
+        
+        testimonialContainer.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
+        }, { passive: true });
+        
+        function handleSwipe() {
+            const threshold = 50; // Minimum swipe distance
+            const diff = startX - endX;
+            
+            if (Math.abs(diff) < threshold) return;
+            
+            if (diff > 0) {
+                // Swipe left (next)
+                currentIndex = (currentIndex + 1) % indicators.length;
+            } else {
+                // Swipe right (previous)
+                currentIndex = (currentIndex - 1 + indicators.length) % indicators.length;
+            }
+            
+            // Update indicators and show the new slide
+            indicators.forEach((ind, i) => {
+                ind.classList.toggle('active', i === currentIndex);
+            });
+        }
+    }
+    
+    // Touch interaction for product cards
+    const productCards = document.querySelectorAll('.product-image-wrapper');
+    
+    productCards.forEach(card => {
+        card.addEventListener('touchstart', () => {
+            card.style.transform = 'translateY(-3px)';
+            card.style.boxShadow = '0px 6px 8px rgba(0, 0, 0, 0.2)';
+        }, { passive: true });
+        
+        card.addEventListener('touchend', () => {
+            card.style.transform = '';
+            card.style.boxShadow = '';
+        }, { passive: true });
+    });
+}
+
+// Improve performance for mobile devices
+function improvePerformance() {
+    // Use passive event listeners for scroll events
+    const passiveSupported = false;
+    
+    try {
+        const options = {
+            get passive() {
+                return passiveSupported = true;
+            }
+        };
+        
+        window.addEventListener("test", null, options);
+        window.removeEventListener("test", null, options);
+    } catch(err) {
+        passiveSupported = false;
+    }
+    
+    // Apply passive listeners to scroll events
+    const scrollEvents = ['scroll', 'touchmove', 'wheel'];
+    
+    scrollEvents.forEach(event => {
+        window.addEventListener(event, function() {}, 
+            passiveSupported ? { passive: true } : false);
+    });
+    
+    // Debounce window resize events
+    let resizeTimer;
+    
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            // Trigger any layout adjustments needed
+            document.querySelectorAll('.special-content').forEach(content => {
+                content.style.display = 'flex';
+                content.style.visibility = 'visible';
+            });
+        }, 250);
+    });
 }

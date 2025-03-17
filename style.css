@@ -234,6 +234,18 @@ p {
     cursor: pointer;
 }
 
+/* Fix for elements that might be hidden on mobile */
+@media (max-width: 768px) {
+    .weekly-offers-section .special-title,
+    .weekly-offers-section .special-text,
+    .custom-teddy-section .special-title,
+    .custom-teddy-section .special-text {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
+
 /* Buttons */
 .btn,
 .acquista-btn,
@@ -484,20 +496,12 @@ p {
     display: flex;
     padding: 50px 0 89px;
     margin-top: 0;
-    /* Removed margin to place title exactly between sections */
     flex-direction: column;
     align-items: stretch;
     width: 100%;
     position: relative;
     z-index: 1;
     border-top: none;
-    /* Ensure no border between sections */
-}
-
-/* Add extra spacing for the first item to accommodate the title */
-.product-showcase .product-container {
-    margin-top: 60px;
-    /* Increased to allow space for the title */
 }
 
 .product-container {
@@ -505,6 +509,10 @@ p {
     max-width: var(--container-width);
     margin: 0 auto;
     padding: 0 var(--spacing-md);
+}
+
+.product-showcase .product-container {
+    margin-top: 60px;
 }
 
 .product-grid {
@@ -610,7 +618,7 @@ p {
     margin: 7px 0 0 0;
 }
 
-/* Section titles with decorative wrappers - REDESIGNED FOR PERFECT CENTERING */
+/* Section titles with decorative wrappers */
 .section-title-container {
     text-align: center;
     width: 100%;
@@ -637,38 +645,25 @@ p {
     margin: 0 auto;
     z-index: 50;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-    /* Ensure it appears above the background */
+    flex-wrap: nowrap;
+    white-space: nowrap;
 }
 
-/* Position for product showcase title - IMPROVED POSITIONING */
+/* Position for product showcase title */
 .product-showcase .section-title-container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 40px;
-    /* Set a fixed height */
     z-index: 40;
     transform: translateY(-50%);
-    /* Key for perfect centering between sections */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Force the container to sit half on each color */
     background: linear-gradient(to bottom, var(--mint-bg) 50%, var(--light-beige) 50%);
     padding: 0;
     margin: 0;
-}
-
-/* Position for reviews section title - also centered between sections */
-.reviews-section .section-title-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 40;
-    transform: translateY(-50%);
-    /* Key for perfect centering between sections */
 }
 
 .section-title-wrapper img {
@@ -691,7 +686,6 @@ p {
     position: relative;
     z-index: 0;
     margin-bottom: 0;
-    /* Removed margin to align perfectly with product showcase */
 }
 
 .header-container {
@@ -825,6 +819,9 @@ p {
     align-items: center;
     justify-content: center;
     margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    padding: 0 15px;
+    width: 100%;
 }
 
 .heart-icon-title-container img {
@@ -834,9 +831,10 @@ p {
 }
 
 .heart-icon-title-container h2 {
-    font-size: 40px;
+    font-size: 50px;
     font-weight: 600;
     color: var(--brown);
+    text-align: center;
 }
 
 /* Special sections grid */
@@ -861,20 +859,21 @@ p {
     border: 3px solid #e9d0a9;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .gift-card-section .special-image {
     width: 100%;
     height: 300px;
+    flex-shrink: 0;
 }
 
 .gift-card-section .special-content {
     padding: 30px;
-}
-
-.gift-card-section .special-title {
-    font-size: var(--font-2xl);
-    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .weekly-offers-section {
@@ -893,12 +892,16 @@ p {
 .custom-teddy-section .special-image {
     width: 40%;
     min-height: 100%;
+    flex-shrink: 0;
 }
 
 .weekly-offers-section .special-content,
 .custom-teddy-section .special-content {
     padding: 20px 25px;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0; /* Ensures the content doesn't overflow */
 }
 
 .custom-teddy-section {
@@ -915,6 +918,7 @@ p {
 
 .special-image {
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .special-image img {
@@ -925,8 +929,8 @@ p {
 }
 
 .special-content {
-    display: flex;
-    flex-direction: column;
+    display: block;
+    flex-grow: 1;
 }
 
 .special-title {
@@ -935,6 +939,7 @@ p {
     color: var(--brown);
     margin-bottom: 15px;
     line-height: 1.2;
+    display: block;
 }
 
 .special-text {
@@ -943,12 +948,19 @@ p {
     margin-bottom: 20px;
     line-height: 1.5;
     flex-grow: 1;
+    display: block;
+}
+
+.weekly-offers-section .special-title,
+.weekly-offers-section .special-text,
+.custom-teddy-section .special-title,
+.custom-teddy-section .special-text {
+    display: block;
 }
 
 .discover-more {
     font-size: var(--font-base);
     font-weight: 500;
-    color: var(--mint);
     text-decoration: none;
     display: inline-flex;
     align-items: center;
@@ -971,9 +983,8 @@ p {
 
 /* Reviews Section - Full Width */
 .reviews-section {
-    padding: 50px 0 3rem 0;
-    margin-top: 80px;
-    /* Adjusted to create space for centered title */
+    padding: 40px 0 3rem 0;
+    margin-top: 0;
     background-color: var(--light-mint);
     width: 100vw;
     max-width: 100vw;
@@ -983,14 +994,57 @@ p {
     z-index: 0;
 }
 
-/* Add extra spacing for testimonials to accommodate the title */
-.reviews-section .testimonials-carousel {
-    margin-top: 50px;
-    /* Increased to allow space for the title */
+/* Reviews title container */
+.reviews-title-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    z-index: 40;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, var(--light-beige) 50%, var(--light-mint) 50%);
+    padding: 0;
+    margin: 0;
 }
 
-.reviews-section .section-title-wrapper span {
+.reviews-title-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    border: 3px solid var(--gold);
+    border-radius: var(--radius-xl);
+    padding: 0.5rem 2.5rem;
+    box-shadow: 0 6px 15px rgba(198, 156, 123, 0.25);
+    position: relative;
+    max-width: 90%;
+    margin: 0 auto;
+    z-index: 50;
+}
+
+.reviews-title-wrapper img {
+    width: 30px;
+    height: 30px;
+    margin-right: 12px;
+}
+
+.reviews-title {
     font-style: italic;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--brown);
+    display: inline-block;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Testimonial carousel spacing */
+.reviews-section .testimonials-carousel {
+    margin-top: 20px;
 }
 
 /* Carousel indicators */
@@ -1045,52 +1099,52 @@ p {
 }
 
 .testimonial-card {
-    background-color: #ffffff; /* White background */
-    border: 2px solid #d8c59b; /* Golden/beige border */
+    background-color: #ffffff;
+    border: 2px solid #d8c59b;
     border-radius: 20px;
     padding: 25px;
     margin-bottom: 20px;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
     display: flex;
-    flex-direction: column-reverse; /* Reverse to put text on top */
-  }
+    flex-direction: column-reverse;
+}
 
-  .testimonial-header {
+.testimonial-header {
     display: flex;
     align-items: center;
-  }
+}
 
-  .testimonial-avatar {
+.testimonial-avatar {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background-color: white;
-    color: #333;  /* Dark text color for contrast */
-    border: 1px solid #d8c59b;  /* Light gold border */
+    color: #333;
+    border: 1px solid #d8c59b;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
     font-size: 22px;
     margin-right: 15px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
-  }
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
 
-  .avatar-m, .avatar-c, .avatar-j {
+.avatar-m, .avatar-c, .avatar-j {
     background-color: white !important;
     color: #333 !important;
-  }
+}
 
-  .testimonial-name {
+.testimonial-name {
     font-weight: 600;
     font-size: 16px;
     color: #333;
-  }
+}
 
-  .testimonial-info {
+.testimonial-info {
     font-size: 14px;
     color: #666;
-  }
+}
 
 .testimonial-text {
     font-style: italic;
@@ -1099,16 +1153,6 @@ p {
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 16px;
-  }
-
-  
-
-/* Avatar specific colors */
-.avatar-m,
-.avatar-c,
-.avatar-j {
-    background-color: #f0f0f0;
-    color: #7a6c5d;
 }
 
 /* Footer styles */
@@ -1381,6 +1425,81 @@ p {
     z-index: 0;
 }
 
+/* Hero Banner Container*/
+.hero-banner-container {
+    position: relative;
+    width: 100%;
+}
+
+/* Banner styles */
+.banner-container {
+    width: 100%;
+    max-width: 1100px;
+    padding: 0;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+
+.banner {
+    height: 80px;
+    width: 100%;
+    border-radius: 40px;
+    border: 2px solid #c9ad86;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.white-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.color-bg {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60%;
+    height: 100%;
+    background-color: #c9967e;
+    border: 3px solid #c9ad86;
+    border-radius: 100px 40px 40px 100px;
+}
+
+.text-left {
+    position: absolute;
+    left: 80px;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 27px;
+    color: #333;
+    z-index: 1;
+}
+
+.text-right {
+    position: absolute;
+    right: 40px;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    z-index: 1;
+}
+
 /* Media queries for responsiveness */
 @media (max-width: 1200px) {
     :root {
@@ -1413,26 +1532,20 @@ p {
         width: 50%;
     }
 
-    /* Product showcase adjustments */
     .product-showcase {
         padding-top: 80px;
         margin-top: 0;
-        /* Keep at 0 to maintain title positioning */
     }
 
-    /* Features section adjustment */
     .features-section {
         margin-bottom: 0;
-        /* Keep at 0 to maintain title positioning */
     }
 
-    /* Ensure the title container remains properly positioned */
     .product-showcase .section-title-container {
         height: 40px;
         background: linear-gradient(to bottom, var(--mint-bg) 50%, var(--light-beige) 50%);
     }
 
-    /* Adjusted section titles */
     .section-title-wrapper {
         padding: 0.7rem 1.8rem;
         font-size: var(--font-md);
@@ -1445,14 +1558,21 @@ p {
         margin-right: 8px;
     }
 
-    /* Adjust reviews section for title */
     .reviews-section {
         margin-top: 0;
-        /* Keep at 0 to maintain title positioning */
     }
 
     .reviews-section .testimonials-carousel {
         margin-top: 40px;
+    }
+    
+    /* Fix for reviews title */
+    .reviews-title-wrapper {
+        padding: 0.7rem 1.8rem;
+    }
+    
+    .reviews-title {
+        font-size: 28px;
     }
 }
 
@@ -1460,10 +1580,8 @@ p {
     .features-section {
         padding: 40px var(--spacing-md) 60px;
         margin-bottom: 0;
-        /* Keep at 0 to maintain title positioning */
     }
 
-    /* Ensure the title container remains properly positioned */
     .product-showcase .section-title-container {
         height: 35px;
         background: linear-gradient(to bottom, var(--mint-bg) 50%, var(--light-beige) 50%);
@@ -1483,7 +1601,6 @@ p {
         white-space: nowrap;
     }
     
-    /* Keep flowers inline with text */
     .features-section .flor-decorativa {
         width: 35px;
         height: 35px;
@@ -1562,13 +1679,26 @@ p {
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
     }
 
-    /* Further adjust product showcase and reviews */
     .product-showcase {
         padding-top: 60px;
     }
 
     .product-showcase .product-container {
         margin-top: 30px;
+    }
+    
+    /* Reviews title adjustments */
+    .reviews-title-container {
+        margin-bottom: 25px;
+    }
+    
+    .reviews-title {
+        font-size: 26px;
+    }
+    
+    .reviews-title-wrapper img {
+        width: 25px;
+        height: 25px;
     }
 }
 
@@ -1581,7 +1711,6 @@ p {
         --font-xl: 20px;
     }
     
-    /* Keep header container flowers and text on same line for mobile */
     .header-container {
         justify-content: center;
         flex-wrap: nowrap;
@@ -1591,10 +1720,10 @@ p {
         padding: 0 5px;
     }
 
-    /* Improved header layout for small screens */
     .nav-container {
         position: relative;
         justify-content: space-between;
+        padding: var(--spacing-sm) var(--spacing-md);
     }
 
     .logo {
@@ -1624,7 +1753,6 @@ p {
 
     .nav-right .acquista-btn {
         display: none;
-        /* Hide the button on small screens to save space */
     }
 
     .nav-right .icon-link {
@@ -1643,7 +1771,6 @@ p {
         margin-bottom: 15px;
     }
 
-    /* Ensure the title container remains properly positioned in mobile */
     .product-showcase .section-title-container {
         height: 30px;
         background: linear-gradient(to bottom, var(--mint-bg) 50%, var(--light-beige) 50%);
@@ -1659,8 +1786,9 @@ p {
     }
 
     .testimonials-grid {
-        gap: 25px;
-      }
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
 
     .main-nav {
         display: none;
@@ -1703,23 +1831,65 @@ p {
     .collections-section {
         padding: 40px var(--spacing-md);
     }
-
+    
+    .special-title-section {
+        margin: 2rem 0 1.5rem;
+    }
+    
+    .heart-icon-title-container {
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+    }
+    
+    .heart-icon-title-container img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
     .heart-icon-title-container h2 {
         font-size: var(--font-xl);
+        text-align: center;
+        width: 100%;
     }
 
     .weekly-offers-section,
     .custom-teddy-section {
         flex-direction: column;
+        width: 100%;
     }
 
     .weekly-offers-section .special-image,
     .custom-teddy-section .special-image {
         width: 100%;
         height: 200px;
+        max-width: 100%;
+    }
+    
+    .weekly-offers-section .special-content,
+    .custom-teddy-section .special-content {
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+    
+    /* Fix for special sections on mobile */
+    .special-title {
+        display: block !important;
+        font-size: var(--font-lg);
+        margin-bottom: 12px;
+    }
+    
+    .special-text {
+        display: block !important;
+        margin-bottom: 15px;
+    }
+    
+    .discover-more {
+        display: inline-block !important;
     }
 
-    /* Mobile title adjustments */
     .section-title-wrapper {
         padding: 0.7rem 1.7rem;
         font-size: var(--font-md);
@@ -1745,7 +1915,6 @@ p {
     .product-showcase {
         padding-top: 50px;
         margin-top: 0;
-        /* Keep at 0 to maintain title positioning */
     }
 
     .product-grid {
@@ -1757,10 +1926,8 @@ p {
         margin-bottom: 20px;
     }
 
-    /* Mobile adjustments for reviews section */
     .reviews-section {
         margin-top: 0;
-        /* Keep at 0 to maintain title positioning */
         padding-top: 40px;
     }
 
@@ -1768,7 +1935,6 @@ p {
         margin-top: 30px;
     }
 
-    /* Maintain larger flower size on tablets */
     .flor-decorativa {
         width: 40px;
         height: 40px;
@@ -1784,6 +1950,75 @@ p {
         width: 12px;
         height: 20px;
     }
+    
+    /* Reviews title fixes for mobile */
+    .reviews-title-container {
+        width: 100%;
+        height: 30px;
+    }
+    
+    .reviews-title-wrapper {
+        padding: 0.6rem 1.5rem;
+        max-width: 80%;
+    }
+    
+    .reviews-title {
+        font-size: 22px;
+        white-space: nowrap;
+    }
+    
+    .reviews-title-wrapper img {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+    }
+    
+    /* Special sections content fixes */
+    .weekly-offers-section .special-content,
+    .custom-teddy-section .special-content {
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .weekly-offers-section .special-title,
+    .weekly-offers-section .special-text,
+    .custom-teddy-section .special-title,
+    .custom-teddy-section .special-text {
+        display: block !important;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 10px;
+        visibility: visible !important;
+    }
+    
+    /* Ensure these critical elements are visible on mobile */
+    .weekly-offers-section h3.special-title,
+    .custom-teddy-section h3.special-title {
+        display: block !important;
+        visibility: visible !important;
+        font-size: var(--font-lg);
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    
+    /* Mobile improvements */
+    .top-bar-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 5px 0;
+    }
+    
+    .top-bar-item {
+        margin-bottom: 3px;
+        font-size: var(--font-xs);
+    }
+    
+    .hero-image {
+        height: auto;
+        max-height: 400px;
+        object-fit: cover;
+    }
 }
 
 @media (max-width: 640px) {
@@ -1793,11 +2028,23 @@ p {
         --font-2xl: 22px;
         --font-xl: 18px;
         --font-lg: 16px;
+        --font-base: 14px;
+    }
+    
+    .heart-icon-title-container h2 {
+        font-size: var(--font-lg);
+        padding: 0 15px;
+        line-height: 1.4;
+        margin-top: 5px;
+    }
+    
+    .heart-icon-title-container img {
+        width: 32px;
+        height: 32px;
     }
 
-    /* Further improvements for very small screens */
     .nav-container {
-        padding: var(--spacing-sm) 0;
+        padding: var(--spacing-sm) var(--spacing-sm);
     }
 
     .logo img {
@@ -1818,7 +2065,6 @@ p {
         margin-left: 2px;
     }
 
-    /* Adjust spacing between icons for small screens */
     .nav-right .icon-link {
         margin-left: 0;
         margin-right: 10px;
@@ -1907,10 +2153,9 @@ p {
         white-space: nowrap;
     }
 
-    /* Smallest mobile adjustments */
     .section-title-wrapper {
         padding: 0.6rem 1.4rem;
-        font-size: var(--font-sm);
+        /*– font-size: var(--font-sm);  */
         font-weight: 700;
         max-width: 90%;
         margin: 0 auto;
@@ -1919,24 +2164,21 @@ p {
     }
 
     .section-title-wrapper img {
-        width: 18px;
-        height: 18px;
+        width: 58px;
+        height: 58px;
         margin-right: 6px;
     }
 
     .product-showcase {
         padding-top: 40px;
         margin-top: 0;
-        /* Keep at 0 to maintain title positioning */
     }
 
     .reviews-section {
         margin-top: 0;
-        /* Keep at 0 to maintain title positioning */
         padding-top: 30px;
     }
 
-    /* Keep flowers small but on same line as text */
     .flor-decorativa {
         width: 28px;
         height: 28px;
@@ -1954,30 +2196,162 @@ p {
         width: 10px;
         height: 10px;
     }
+    
+    /* Testimonials grid for mobile */
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    /* Reviews section title for small screens */
+    .reviews-title-wrapper {
+        padding: 0.5rem 1.2rem;
+        max-width: 85%;
+    }
+    
+    .reviews-title {
+        font-size: 18px;
+    }
+    
+    .reviews-title-wrapper img {
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+    }
+    
+    /* Special sections for mobile */
+    .special-sections-grid {
+        gap: 15px;
+    }
+    
+    .gift-card-section .special-image {
+        height: 180px;
+    }
+    
+    .special-title {
+        font-size: var(--font-base);
+        display: block !important;
+    }
+    
+    .special-text {
+        font-size: var(--font-sm);
+        display: block !important;
+    }
+    
+    .weekly-offers-section .special-title,
+    .weekly-offers-section .special-text,
+    .custom-teddy-section .special-title,
+    .custom-teddy-section .special-text {
+        display: block !important;
+    }
+    
+    .banner-container {
+        top: 5px;
+    }
+    
+    .banner {
+        height: 50px;
+    }
+    
+    .text-left, .text-right {
+        font-size: 14px;
+    }
+    
+    .text-left {
+        left: 20px;
+    }
+    
+    .text-right {
+        right: 20px;
+    }
+    
+    /* Improvements for mobile */
+    .collections-title {
+        font-size: var(--font-3xl);
+        text-align: center;
+    }
+    
+    .collections-description {
+        font-size: var(--font-base);
+        width: 95%;
+    }
+    
+    .product-image-wrapper {
+        min-height: 300px;
+    }
+    
+    .product-showcase .product-image {
+        max-width: 180px;
+        height: 180px;
+    }
+    
+    .product-info {
+        padding: 12px 15px;
+    }
+    
+    .testimonial-card {
+        padding: 15px;
+    }
+    
+    .testimonial-text {
+        font-size: var(--font-sm);
+        line-height: 1.4;
+    }
+    
+    .explore-button {
+        margin-top: 25px;
+        min-height: auto;
+        padding: 10px 15px;
+        width: 200px;
+        font-size: var(--font-base);
+    }
 }
 
-/* Extra small devices */
 @media (max-width: 480px) {
-    /* Keep header container very compact */
+    :root {
+        --font-5xl: 28px;
+        --font-4xl: 26px;
+        --font-3xl: 22px;
+        --font-2xl: 20px;
+        --font-xl: 18px;
+        --font-lg: 16px;
+        --font-base: 14px;
+        --font-sm: 12px;
+    }
+    
+    .heart-icon-title-container h2 {
+        font-size: 20px;
+        padding: 0 5px;
+        line-height: 1.3;
+        margin-top: 3px;
+    }
+    
+    .heart-icon-title-container img {
+        width: 28px;
+        height: 28px;
+        margin-bottom: 5px;
+    }
+    
+    .special-title-section {
+        margin: 1.5rem 0 1rem;
+    }
+
     .header-container {
         gap: 3px;
         padding: 0 2px;
     }
     
-    /* Make flowers even smaller on tiny screens */
     .features-section .flor-decorativa {
         width: 22px;
         height: 22px;
         margin: 0 2px;
     }
 
-    /* Make menu button easier to tap */
     .mobile-menu-btn {
         padding: 8px;
         font-size: 1.3rem;
     }
 
-    /* Further optimize the header layout */
     .logo {
         max-width: 60%;
         overflow: hidden;
@@ -1987,159 +2361,203 @@ p {
         white-space: nowrap;
     }
 
-    /* Show multiple icons for better navigation */
     .nav-right .icon-link {
         display: inline-block;
         margin-right: 8px;
     }
 
-    /* We can still hide the heart icon to save space */
     .nav-right .icon-link:nth-child(3) {
         display: none;
     }
-}
-
-
-
-
-
-
-/* Hero Banner Container com posicionamento relativo */
-.hero-banner-container {
-    position: relative;
-    width: 100%;
-}
-
-/* Hero image mantida como estava */
-.hero-image {
-    width: 100%;
-    height: auto;
-    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-    display: block;
-}
-
-/* Banner styles from banner-test.html - ajustado para sobrepor */
-.banner-container {
-    width: 100%;
-    max-width: 1100px;
-    padding: 0;
-    position: absolute;
-    top: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 20;
-}
-
-.banner {
-    height: 80px;
-    width: 100%;
-    border-radius: 40px;
-    border: 2px solid #c9ad86;
-    overflow: hidden;
-    display: flex;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
-
-.white-bg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-}
-
-.color-bg {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 60%;
-    height: 100%;
-    background-color: #c9967e;
-    border: 3px solid #c9ad86;
-    border-radius: 100px 40px 40px 100px;
-}
-
-.text-left {
-    position: absolute;
-    left: 80px;
-    top: 0;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    font-size: 27px;
-    color: #333;
-    z-index: 1;
-}
-
-.text-right {
-    position: absolute;
-    right: 40px;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: white;
-    z-index: 1;
-}
-
-/* Media query adjustments for banner responsiveness */
-@media (max-width: 768px) {
+    
+    /* Special sections on small screens */
+    .special-sections-grid {
+        padding: 0 10px;
+        gap: 10px;
+    }
+    
+    .special-title {
+        margin-bottom: 8px;
+    }
+    
+    /* Ensure weekly offers and custom teddy sections display properly */
+    .weekly-offers-section .special-content,
+    .custom-teddy-section .special-content {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .weekly-offers-section .special-title,
+    .custom-teddy-section .special-title {
+        display: block !important;
+        visibility: visible !important;
+        font-size: var(--font-base);
+    }
+    
+    .weekly-offers-section .special-text,
+    .custom-teddy-section .special-text {
+        display: block !important;
+        visibility: visible !important;
+        font-size: var(--font-sm);
+    }
+    
+    /* Banner on very small screens */
     .banner-container {
-        top: 25px;
-        /* Ajuste para telas menores */
-        max-width: 100%;
-    }
-
-    .banner {
-        height: 50px;
-    }
-
-    .text-left,
-    .text-right {
-        font-size: 15px;
-    }
-
-    .text-left {
-        left: 20px;
-    }
-
-    .text-right {
-        right: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .banner-container {
-        top: 0px;
-        /* Ajuste para telas muito pequenas */
+        top: 0;
         max-width: 95%;
     }
-
+    
     .banner {
-        height: 50px;
+        height: 40px;
     }
-
-    .text-left,
-    .text-right {
-        font-size: 12px;
+    
+    .text-left, .text-right {
+        font-size: 11px;
     }
-
+    
     .text-left {
         left: 15px;
         width: 35%;
     }
-
+    
     .text-right {
         right: 15px;
         width: 60%;
     }
-
+    
     .color-bg {
         width: 65%;
+    }
+    
+    /* Better spacing for mobile elements */
+    .container {
+        padding: 0 10px;
+    }
+    
+    .collections-section {
+        padding: 30px 10px;
+    }
+    
+    .feature-card {
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+    
+    .product-showcase {
+        padding: 30px 0 40px;
+    }
+    
+    .product-showcase .product-container {
+        margin-top: 20px;
+    }
+    
+    .testimonial-card {
+        padding: 15px;
+    }
+    
+    .newsletter {
+        padding: 30px 10px 0;
+    }
+    
+    /* Properly sized buttons */
+    .explore-button {
+        font-size: var(--font-sm);
+        padding: 10px 15px;
+        margin-top: 30px;
+        min-height: auto;
+        width: 180px;
+    }
+}
+
+
+
+
+/* Critical fix for elements not displaying on small mobile screens */
+.weekly-offers-section .special-title,
+.weekly-offers-section .special-text,
+.custom-teddy-section .special-title,
+.custom-teddy-section .special-text {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Additional specific fixes for very small screens */
+@media (max-width: 480px) {
+    /* Ensure content containers are properly displayed */
+    .weekly-offers-section .special-content,
+    .custom-teddy-section .special-content {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        padding: 15px !important;
+        box-sizing: border-box !important;
+        min-height: 150px !important;
+    }
+    
+    /* Ensure titles are always visible */
+    .weekly-offers-section .special-title,
+    .custom-teddy-section .special-title {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        margin-bottom: 8px !important;
+        font-size: var(--font-base) !important;
+        color: var(--brown) !important;
+    }
+    
+    /* Ensure text paragraphs are always visible */
+    .weekly-offers-section .special-text,
+    .custom-teddy-section .special-text {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        margin-bottom: 15px !important;
+        font-size: var(--font-sm) !important;
+        color: #5a4a3d !important;
+    }
+    
+    /* Ensure discover more links are properly displayed */
+    .weekly-offers-section .discover-more,
+    .custom-teddy-section .discover-more {
+        display: inline-block !important;
+        margin-top: auto !important;
+    }
+    
+    /* Fix for the nested containers */
+    .special-sections-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    
+    /* Fix for the image containers */
+    .weekly-offers-section .special-image,
+    .custom-teddy-section .special-image {
+        height: 180px !important;
+        width: 100% !important;
+    }
+}
+
+/* Extreme mobile case fixes */
+@media (max-width: 320px) {
+    .weekly-offers-section,
+    .custom-teddy-section {
+        min-height: 350px !important;
+    }
+    
+    .weekly-offers-section .special-content,
+    .custom-teddy-section .special-content {
+        padding: 12px !important;
+    }
+    
+    .weekly-offers-section .special-title,
+    .custom-teddy-section .special-title {
+        font-size: 14px !important;
+    }
+    
+    .weekly-offers-section .special-text,
+    .custom-teddy-section .special-text {
+        font-size: 12px !important;
     }
 }

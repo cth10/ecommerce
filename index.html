@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>TeddyShop - Negozio di Peluche Online</title>
 
   <!-- Font Awesome for icons -->
@@ -11,6 +11,7 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="promo-section.css">
 </head>
 
 <body>
@@ -60,8 +61,6 @@
 
   <!-- Hero Section -->
   <section class="hero">
-
-
     <!-- Imagem de fundo com o banner sobreposto -->
     <div class="hero-banner-container">
       <img src="images/Untitled.png" alt="Collezione di peluche" class="hero-image">
@@ -80,7 +79,7 @@
 
   <!-- Main Content -->
   <div class="container main-content">
-    <!-- Collections Section (UPDATED) -->
+    <!-- Collections Section -->
     <section class="collections-section">
       <header class="collections-header">
         <h2 class="collections-title">
@@ -133,7 +132,7 @@
       </div>
     </section>
 
-    <!-- Nova seção de produtos com o layout atualizado -->
+    <!-- Product Showcase Section -->
     <section class="product-showcase">
       <div class="product-container">
         <div class="product-grid">
@@ -374,8 +373,6 @@
       <button class="explore-button" aria-label="Explore products now">Esplora adesso</button>
     </section>
 
-
-
     <!-- Special Features -->
     <div class="special-title-section">
       <div class="heart-icon-title-container">
@@ -406,8 +403,8 @@
           <img src="images/weekly-offers-image.jpg" alt="Kids room with mountain wall decoration">
         </div>
         <div class="special-content">
-          <h3 class="special-title">Le offerte speciali della settimana</h3>
-          <p class="special-text">Dai un'occhiata alle nostre offerte speciali! Troverai sconti imperdibili su alcuni
+          <h3 class="special-title" style="display: block">Le offerte speciali della settimana</h3>
+          <p class="special-text" style="display: block">Dai un'occhiata alle nostre offerte speciali! Troverai sconti imperdibili su alcuni
             dei nostri peluche più popolari. Ma affrettati, le offerte sono per tempo limitato!</p>
           <a href="#" class="discover-more">Scopri di più</a>
         </div>
@@ -419,10 +416,9 @@
           <img src="images/custom-teddy-image.jpg" alt="Kids room with giraffe plush toy">
         </div>
         <div class="special-content">
-          <h3 class="special-title">Personalizza il tuo peluche con noi</h3>
-          <p class="special-text">Vuoi rendere il tuo peluche ancora più speciale? Personalizzalo con il nome o la data!
-            Offriamo un servizio di personalizzazione per molti dei nostri peluche, rendendoli unici e indimenticabili.
-          </p>
+          <h3 class="special-title" style="display: block">Personalizza il tuo peluche con noi</h3>
+          <p class="special-text" style="display: block">Vuoi rendere il tuo peluche ancora più speciale? Personalizzalo con il nome o la data!
+            Offriamo un servizio di personalizzazione per molti dei nostri peluche, rendendoli unici e indimenticabili.</p>
           <a href="#" class="discover-more">Scopri di più</a>
         </div>
       </div>
@@ -430,10 +426,10 @@
 
     <!-- Reviews Section -->
     <section class="reviews-section">
-      <div class="section-title-container">
-        <div class="section-title-wrapper">
+      <div class="reviews-title-container">
+        <div class="reviews-title-wrapper">
           <img src="images/heart-icon.png" alt="Heart icon">
-          <span>Opinioni Dei Nostri Clienti</span>
+          <span class="reviews-title">Opinioni Dei Nostri Clienti</span>
         </div>
       </div>
 
@@ -489,10 +485,7 @@
         <div class="indicator"></div>
       </div>
     </section>
-
-
   </div>
-
 
   <!-- Footer -->
   <footer class="footer">
